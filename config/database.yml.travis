@@ -6,5 +6,4 @@ postgresql: &postgresql
   min_messages: ERROR
 
 test:
-  <<: *default
   adapter: postgresql
