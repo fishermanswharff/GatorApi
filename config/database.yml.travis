@@ -1,4 +1,22 @@
-test:
+postgresql: &postgresql
   adapter: postgresql
-  database: travis_ci_test
   username: postgres
+  password: 
+  database: travis_ci_test
+  min_messages: ERROR
+
+default: &default
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *<%= ENV['DB'] || "postgresql" %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
