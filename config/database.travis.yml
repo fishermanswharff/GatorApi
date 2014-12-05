@@ -2,7 +2,7 @@ postgresql: &postgresql
   adapter: postgresql
   username: postgres
   password:
-  database: gatorApi_<%= Rails.env %>
+  database: travis_ci_<%= Rails.env %>
   min_messages: ERROR
 
 defaults: &defaults
