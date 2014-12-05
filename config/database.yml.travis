@@ -1,9 +1,4 @@
-postgresql: &postgresql
-  adapter: postgresql
-  username: postgres
-  password: 
-  database: travis_ci_test
-  min_messages: ERROR
-
 test:
   adapter: postgresql
+  database: travis_ci_test
+  username: postgres
