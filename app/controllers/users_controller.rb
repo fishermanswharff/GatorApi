@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
   def login
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 
   private 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :role, :email, :password, :password_confirmation, :token)
+    params.require(:user).permit(:first_name, :last_name, :username, :role, :email, :password, :password_confirmation)
   end
 
   def set_user

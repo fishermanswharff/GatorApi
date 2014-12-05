@@ -18,7 +18,6 @@ describe 'User API Endpoint' do
   end
 
   describe '#login' do
-    
     before(:each) do
       post '/login',{ username: "foo", password: "secret" }
     end
@@ -80,14 +79,15 @@ describe 'User API Endpoint' do
       post '/users',
       { user:
         { first_name: 'far', last_name: 'boo', username: 'farboo', role: 'generic', email: 'foz@baz.com', password: 'secret'}
-
-      }.to_json, {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON }
+      }.to_json, {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
       expect(response.status).to eq 201
     end
 
     it 'refuses without the proper parameters' do
-      
-      # @user2 = User.create({ name: 'far', user_name: 'boo', role: 'student', email: 'far@boo.com', password: 'secret' })
+      post '/users',
+      { user: 
+        { username: 12, email: '', password: 'secret', name: 'jason', about: 'about me'}
+      }.to_json, {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
       expect(response.status).to eq 422
     end
   end

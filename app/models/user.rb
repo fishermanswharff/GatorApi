@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-  has_many :authentications, class_name: 'UserAuthentication', dependent: :destroy
+  has_many :user_authentications, dependent: :destroy
   before_create :set_token
+  validates :username, :password, presence: true
+  
   # has_many :feeds
   
   enum role: [:admin,:generic]
