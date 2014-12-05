@@ -1,4 +1,4 @@
-[![Travis build status](https://travis-ci.org/bahmutov/xplain.png?branch=master)](https://travis-ci.org/bahmutov/xplain) [![Code Climate](https://codeclimate.com/github/fishermanswharff/GatorApi/badges/gpa.svg)](https://codeclimate.com/github/fishermanswharff/GatorApi)
+[![Build status][ci-image]][ci-url] [![Code Climate](https://codeclimate.com/github/fishermanswharff/GatorApi/badges/gpa.svg)](https://codeclimate.com/github/fishermanswharff/GatorApi)
 
 Gator
 =========
@@ -46,3 +46,7 @@ Works in progress:
 Wireframes and schema preparation:
 ----------------
 ![wireframes and schema](/docs/whiteboard-notes.jpg "Whiteboard notes")
+
+
+[ci-image]: https://travis-ci.org/fishermanswharff/GatorApi.svg?branch=master
+[ci-url]: https://travis-ci.org/fishermanswharff/GatorApi
