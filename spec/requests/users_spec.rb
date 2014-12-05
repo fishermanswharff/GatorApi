@@ -69,7 +69,27 @@ describe 'User API Endpoint' do
       user_response = json(response.body)
       expect(user_response[:username]).to eq 'foo'
     end
+  end
 
+  describe '#create' do
+    before (:all) do
+      
+    end
+
+    it 'creates a new user' do
+      post '/users',
+      { user:
+        { first_name: 'far', last_name: 'boo', username: 'farboo', role: 'generic', email: 'foz@baz.com', password: 'secret'}
+
+      }.to_json, {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON }
+      expect(response.status).to eq 201
+    end
+
+    it 'refuses without the proper parameters' do
+      
+      # @user2 = User.create({ name: 'far', user_name: 'boo', role: 'student', email: 'far@boo.com', password: 'secret' })
+      expect(response.status).to eq 422
+    end
   end
 end
 
