@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'has a token generated from a password digest' do
-    user = FactoryGirl.build_stubbed(:user)
-    expect(user.token).to_not be_nil
+    # user = FactoryGirl.build_stubbed(:user)
+    expect(@user.token).to_not be_nil
   end
 end
