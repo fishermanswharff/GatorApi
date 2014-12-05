@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
   has_many :authentications, class_name: 'UserAuthentication', dependent: :destroy
+  before_create :set_token
   # has_many :feeds
   
   enum role: [:admin,:generic]
   has_secure_password
-  before_create :set_token
 
   def self.create_from_omniauth(params)
     attributes = {
