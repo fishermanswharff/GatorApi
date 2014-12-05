@@ -16,6 +16,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'has a valid factory' do
+    # the factory is not valid because it does not invoke the set_token method on a user
     expect(FactoryGirl.build_stubbed(:user)).to be_valid
   end
 
@@ -24,7 +25,7 @@ RSpec.describe User, type: :model do
     expect(@user.email).to eq 'fishermanswharff@mac.com'
   end
 
-  it 'has a role' do
+  it 'has a role of admin' do
     # user = FactoryGirl.build_stubbed(:user)
     expect(@user.role).to eq 'admin'
   end
