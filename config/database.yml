@@ -1,6 +1,6 @@
 postgresql: &postgresql
   adapter: postgresql
-  username: jason
+  username: <%= ENV['TRAVIS'] ? 'postgres' : 'jason' %>
   password:
   database: gatorApi_<%= Rails.env %>
   min_messages: ERROR
