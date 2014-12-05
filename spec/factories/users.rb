@@ -10,8 +10,8 @@
 
 FactoryGirl.define do
   factory :user do
-    name Faker::Name.name
-    about Faker::Lorem.paragraph(2)
-    email Faker::Internet.email
+    username Faker::Internet.user_name('jasonwharff')
+    email Faker::Internet.email('jason')
+    
   end
 end
