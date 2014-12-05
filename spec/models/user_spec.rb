@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   
-  describe 'user roles' do
-    
+  it 'has a valid factory' do
+
   end
 
-  describe 'create_from_omniauth' do
-    
+  it 'has a role' do
+
   end
-  
 
+  it 'can create an oauth profile' do
 
+  end
 
-  
 end
