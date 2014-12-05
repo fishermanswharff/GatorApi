@@ -1,6 +1,21 @@
-before_script:
-  - cp config/database.yml.travis config/database.yml
-test:
+postgresql: &postgresql
   adapter: postgresql
-  database: gatorApi_test
   username: postgres
+  password:
+  database: gatorApi_<%= Rails.env %>
+  min_messages: ERROR
+
+defaults: &defaults
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *<%= ENV['DB'] || "postgresql" %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
