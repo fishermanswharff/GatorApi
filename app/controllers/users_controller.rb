@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
+  
   def login
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])

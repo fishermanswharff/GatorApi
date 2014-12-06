@@ -134,9 +134,11 @@ describe 'User API Endpoint' do
   end
 
   describe '#destroy' do
+    it 'deletes existing user' do
+      delete "/users/#{@user.id}"
+      expect(response.status).to eq 204
+    end
   end
-
-
 end
 
 
