@@ -39,6 +39,11 @@ describe 'User API Endpoint' do
       token = json(response.body)
       expect(token).to_not be_nil
     end
+
+    it 'responds 401 if unauthorized' do
+      post '/login', { username: "foo", password: "fakesecret"}
+      expect(response.status).to eq 401
+    end
   end
 
   describe '#logout' do
@@ -104,8 +109,6 @@ describe 'User API Endpoint' do
       expect(user_url(user[:id])).to eq response.location
     end
 
-    # TODO: fix unpermitted params bug
-    # I can pass in unpermitted params if I give the password param a value
     it 'refuses without the proper parameters' do
       post '/users',
       { user:
