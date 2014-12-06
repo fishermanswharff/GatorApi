@@ -76,7 +76,7 @@ Gator looks for environment variables with these names:
 
 Wireframes and schema preparation:
 ----------------
-![wireframes and schema](https://github.com/fishermanswharff/Gator/docs/whiteboard-notes.jpg "Whiteboard notes")
+![wireframes and schema](https://github.com/fishermanswharff/Gator/blob/master/docs/whiteboard-notes.jpg "Whiteboard notes")
 
 
 [ci-image]: https://travis-ci.org/fishermanswharff/GatorApi.svg?branch=master
