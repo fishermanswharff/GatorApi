@@ -111,8 +111,25 @@ describe 'User API Endpoint' do
   end
 
   describe '#update' do
+    before(:each) do
+      patch "/users/#{@user.id}",
+      { user: 
+        { first_name: 'jason', last_name: 'wharff', role: 'admin', password: 'secret' }
+      }.to_json,
+      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
+      @user_response = json(response.body)
+    end
+    
+    it 'response with success' do
+      expect(response.status).to eq 200
+    end
+
     it 'updates only the new params' do
-      
+      expect(@user_response[:first_name]).to eq 'jason'
+    end
+
+    it 'doesn''t update any other params' do
+      expect(@user_response[:username]).to eq 'foo'
     end
   end
 
