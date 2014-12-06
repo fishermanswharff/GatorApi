@@ -1,12 +1,17 @@
 language: ruby
 rvm:
-  - "2.1.2"
+- 2.1.2
 env:
-  - DB=postgresql
+- DB=postgresql
 script:
-  - CODECLIMATE_REPO_TOKEN=16d109f017a77e12e9af52396b903a991307530a27c1922ded94cfc0757a137a bundle exec rake
-  - RAILS_ENV=test bundle exec rake --trace db:schema:load #rake db:schema:load RAILS_ENV=test
-  - bundle exec rspec spec
+- CODECLIMATE_REPO_TOKEN=16d109f017a77e12e9af52396b903a991307530a27c1922ded94cfc0757a137a
+  bundle exec rake
+- RAILS_ENV=test bundle exec rake --trace db:schema:load
+- bundle exec rspec spec
 before_script:
-  - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test' -U postgres
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: K5BW82RpwaeavYtLl0aMdCGGmNlbZiwisF+wWCbBy3rFhz8kfHEOCbPWfXxLgy5fnh6mB5yaR1froWkxsdYSv90xTDkXGYkH/Vy0n092hdXetog13gOqgfZTFBu+cGz0yR7NYSMw7/EP4pZM2MRWqH05JIIME4+EaCl97COCNWQ=

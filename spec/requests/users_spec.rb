@@ -128,7 +128,7 @@ describe 'User API Endpoint' do
       @user_response = json(response.body)
     end
     
-    it 'response with success' do
+    it 'responds with success' do
       expect(response.status).to eq 200
     end
 
