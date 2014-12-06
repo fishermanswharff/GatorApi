@@ -42,21 +42,20 @@ Endpoints:
       expect(response.content_type).to eq Mime::JSON
 
 
+## Wish List
 
-Features
------------
-* Multi oAuth Providers: Twitter, LinkedIn, Instagram
-* Add your own RSS feed!
-* Select from preset feeds from popular RSS providers!
-* Read your Twitter timeline, LinkedIn feeds, Instagram feed and your favorite news all in one place.
-* See feeds other users added on the home page
-* #nobootstrap
-* #nofoundation
-* #nofrontendframeworks
-
-Project Description
----------
-This project was completed to meet the requirements for Project 1 of General Assembly's Web Development Immersive. It was conceived, scoped and developed in a week. 
+* Token authentication :ballot_box_with_check:
+* Multiple oAuth Providers
+* Image urls pulled from feeds
+* Featured image for RSS feeds
+* Background workers to update feeds
+* Redis-based caching for oAuth provider feeds
+* Background workers to update oAuth provider feeds
+* User-curated magazines
+* Admin-only dashboard for site analytics
+  * user count
+  * user information
+  * feeds
 
 Installation
 --------
@@ -75,16 +74,9 @@ Gator looks for environment variables with these names:
       LINKEDIN_KEY
       LINKEDIN_SECRET_KEY
 
-Works in progress: 
-
-* Featured images for RSS feeds.
-* Cross-browser compatibility for CSS3 transitions
-* Rescuing Twitter Too Many Requests Errors
-
-
 Wireframes and schema preparation:
 ----------------
-![wireframes and schema](/docs/whiteboard-notes.jpg "Whiteboard notes")
+![wireframes and schema](https://github.com/fishermanswharff/Gator/blob/master/docs/whiteboard-notes.jpg "Whiteboard notes")
 
 
 [ci-image]: https://travis-ci.org/fishermanswharff/GatorApi.svg?branch=master
@@ -95,6 +87,3 @@ Wireframes and schema preparation:
 
 [cc-coverage-image]: https://codeclimate.com/github/fishermanswharff/GatorApi/badges/coverage.svg
 [cc-coverage-url]: https://codeclimate.com/github/fishermanswharff/GatorApi
-
-
-
