@@ -1,6 +1,6 @@
 [![Build status][ci-image]][ci-url] [![Code Climate][cc-climate-image]][cc-climate-url] [![Test Coverage][cc-coverage-image]][cc-coverage-url]
 
-## Gator API
+# Gator API
 
 API for Gator, a social and news aggregator. 
 
@@ -15,7 +15,7 @@ Endpoints:
     login   POST   /login(.:format)     users#login
     logout  GET    /logout(.:format)    users#logout
 
-# Create a new user:
+## Create a new user:
 
       post '/users',
       { user:
