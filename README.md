@@ -1,4 +1,4 @@
-[![Build status][ci-image]][ci-url] [![Code Climate](https://codeclimate.com/github/fishermanswharff/GatorApi/badges/gpa.svg)](https://codeclimate.com/github/fishermanswharff/GatorApi)
+[![Build status][ci-image]][ci-url] [![Code Climate][cc-climate-image]][cc-climate-url][![Test Coverage][cc-coverage-image]][cc-coverage-url]
 
 Gator
 =========
@@ -50,3 +50,12 @@ Wireframes and schema preparation:
 
 [ci-image]: https://travis-ci.org/fishermanswharff/GatorApi.svg?branch=master
 [ci-url]: https://travis-ci.org/fishermanswharff/GatorApi
+
+[cc-climate-image]: https://codeclimate.com/github/fishermanswharff/GatorApi/badges/gpa.svg
+[cc-climate-url]: https://codeclimate.com/github/fishermanswharff/GatorApi
+
+[cc-coverage-image]: https://codeclimate.com/github/fishermanswharff/GatorApi/badges/coverage.svg
+[cc-coverage-url]: https://codeclimate.com/github/fishermanswharff/GatorApi
+
+
+
