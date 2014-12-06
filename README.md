@@ -21,12 +21,14 @@ Endpoints:
       { user:
         { first_name: 'far', last_name: 'boo', username: 'farboo', role: 'generic', email: 'foz@baz.com', password: 'secret'}
       }
-      
+
       expect(response.status).to eq 201
       user = JSON.parse(response.body)
       expect(user_url(user[:id])).to eq response.location
 
-## Update an existing user
+## Update an existing user: 
+
+      
 Features
 -----------
 * Multi oAuth Providers: Twitter, LinkedIn, Instagram
