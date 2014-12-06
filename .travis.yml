@@ -4,6 +4,7 @@ rvm:
 env:
   - DB=postgresql
 script:
+  - CODECLIMATE_REPO_TOKEN=16d109f017a77e12e9af52396b903a991307530a27c1922ded94cfc0757a137a bundle exec rake
   - RAILS_ENV=test bundle exec rake --trace db:schema:load #rake db:schema:load RAILS_ENV=test
   - bundle exec rspec spec
 before_script:

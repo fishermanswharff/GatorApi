@@ -14,7 +14,7 @@ gem 'instagram'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'arel', '6.0.0.beta2'
 
-group :development, :test, :production do
+group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '~> 2.0.0.beta4'
@@ -24,6 +24,7 @@ group :development, :test, :production do
   gem 'rspec-rails', '~> 3.0.0'
   gem "factory_girl_rails", "~> 4.0"
   gem "faker"
+  gem "codeclimate-test-reporter", require: nil
 end
 
 gem 'rails_12factor', group: :production
