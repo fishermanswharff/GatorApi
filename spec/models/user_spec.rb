@@ -24,7 +24,11 @@ RSpec.describe User, type: :model do
     expect(@user.role).to eq 'admin'
   end
 
-  it 'has digests the password' do
+  it 'has a unique username' do
+    expect(@user.username).to eq 'foobar'
+  end
+
+  it 'digests the password' do
     expect(@user.password_digest).to_not be_nil
   end
 
