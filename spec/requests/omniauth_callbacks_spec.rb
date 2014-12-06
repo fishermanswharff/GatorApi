@@ -39,7 +39,6 @@ describe 'Omniauth Callbacks Controller' do
     it 'routes to the appropriate provider' do
       expect(request.filtered_parameters['provider']).to eq provider
     end
-
   end
   
 end
