@@ -28,7 +28,17 @@ Endpoints:
 
 ## Update an existing user: 
 
-      
+      patch "/users/#{@user.id}",
+      { user: 
+        { first_name: 'jason', last_name: 'wharff', role: 'admin', password: 'secret' }
+      }
+      expect(response.status).to eq 200
+      expect(response.body[:first_name]).to eq 'jason'
+
+
+
+
+
 Features
 -----------
 * Multi oAuth Providers: Twitter, LinkedIn, Instagram
