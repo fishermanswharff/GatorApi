@@ -34,6 +34,11 @@ describe 'User API Endpoint' do
       post '/login',{ username: "foo", password: "bar" }
       expect(response.status).to eq 401
     end
+
+    it 'expects a token in the response' do
+      token = json(response.body)
+      expect(token).to_not be_nil
+    end
   end
 
   describe '#logout' do

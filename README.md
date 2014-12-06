@@ -35,7 +35,11 @@ Endpoints:
       expect(response.status).to eq 200
       expect(response.body[:first_name]).to eq 'jason'
 
+## Login
 
+      post '/login',{ username: "foo", password: "secret" }
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq Mime::JSON
 
 
 
