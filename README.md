@@ -1,8 +1,27 @@
 [![Build status][ci-image]][ci-url] [![Code Climate][cc-climate-image]][cc-climate-url] [![Test Coverage][cc-coverage-image]][cc-coverage-url]
 
-Gator
-=========
-[Visit Gator Here](http://gator.herokuapp.com)
+## Gator API
+
+API for Gator, a social and news aggregator. 
+
+Endpoints: 
+
+    users   GET    /users(.:format)     users#index
+            POST   /users(.:format)     users#create
+    user    GET    /users/:id(.:format) users#show
+            PATCH  /users/:id(.:format) users#update
+            PUT    /users/:id(.:format) users#update
+            DELETE /users/:id(.:format) users#destroy
+    login   POST   /login(.:format)     users#login
+    logout  GET    /logout(.:format)    users#logout
+
+# Create a new user:
+
+      post '/users',
+      { user:
+        { first_name: 'far', last_name: 'boo', username: 'farboo', role: 'generic', email: 'foz@baz.com', password: 'secret'}
+      }
+
 
 Features
 -----------
