@@ -92,6 +92,8 @@ describe 'User API Endpoint' do
       expect(response.status).to eq 201
     end
 
+    # there is a bug here
+    # I can pass in unpermitted params if I give the password param a value
     it 'refuses without the proper parameters' do
       post '/users',
       { user:
