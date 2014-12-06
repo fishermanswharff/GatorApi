@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :edit]
   post '/login', to: 'users#login'
   get '/logout', to: 'users#logout'
+  get '/' => redirect('https://github.com/fishermanswharff/GatorApi')
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
