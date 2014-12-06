@@ -2,7 +2,7 @@
 
 # Gator API
 
-API for Gator, a social and news aggregator. 
+API for Gator, a social and news aggregator. Root: [https://gatorapi.herokuapp.com](https://gatorapi.herokuapp.com)
 
 Endpoints: 
 
