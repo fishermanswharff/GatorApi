@@ -26,6 +26,8 @@ users = User.create([
 ])
 
 AuthenticationProvider.create(name: 'twitter')
+    
+=begin
 UserAuthentication.create(user_id: 1, authentication_provider_id: 1, uid: '20350433', token: '20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6', params:
    {"provider"=>"twitter",
     "uid"=>"20350433",
@@ -37,8 +39,9 @@ UserAuthentication.create(user_id: 1, authentication_provider_id: 1, uid: '20350
       "description"=>"Designer, Developer, Artist, Professional Tinkerer, Constant Learner. I'm a monster that gobbles up life.",
       "urls"=>{"Website"=>"http://t.co/8oulbeIXyc", "Twitter"=>"https://twitter.com/jasonwharff"}},
     "credentials"=>{"token"=>"20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6", "secret"=>"HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur"}})
-    
-=begin
+
+
+
 {
   "id":2,
   "first_name":"Jenna",
