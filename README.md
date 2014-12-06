@@ -1,4 +1,4 @@
-[![Build status][ci-image]][ci-url] [![Code Climate][cc-climate-image]][cc-climate-url][![Test Coverage][cc-coverage-image]][cc-coverage-url]
+[![Build status][ci-image]][ci-url] [![Code Climate][cc-climate-image]][cc-climate-url] [![Test Coverage][cc-coverage-image]][cc-coverage-url]
 
 Gator
 =========
