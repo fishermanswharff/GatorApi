@@ -50,9 +50,11 @@ Endpoints:
 * Background workers to update feeds
 * Redis-based caching for oAuth provider feeds
 * Background workers to update oAuth provider feeds
+* User-curated magazines
 * Admin-only dashboard for site analytics
-  * user count,
+  * user count
   * user information
+  * feeds
 
 Features
 -----------
