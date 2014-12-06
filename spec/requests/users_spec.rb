@@ -36,8 +36,21 @@ describe 'User API Endpoint' do
     end
   end
 
-  describe '#index' do
+  describe '#logout' do
+    before(:each) do
+      post '/login',{ username: "foo", password: "secret" }
+      get '/logout'
+    end
+    it 'logs the user out' do
+      expect(response.status).to eq 200
+    end
+    it 'returns only a response header' do
+      expect(response.body).to eq " "
+    end
     
+  end
+
+  describe '#index' do
     it 'retrieves all of the users' do
       get '/users'
       expect(response).to be_success
@@ -71,10 +84,6 @@ describe 'User API Endpoint' do
   end
 
   describe '#create' do
-    before (:all) do
-      
-    end
-
     it 'creates a new user' do
       post '/users',
       { user:
@@ -85,8 +94,8 @@ describe 'User API Endpoint' do
 
     it 'refuses without the proper parameters' do
       post '/users',
-      { user: 
-        { username: 12, email: '', password: 'secret', name: 'jason', about: 'about me'}
+      { user:
+        { username: 12, email: '', password: '', name: 'jason', about: 'about me'}
       }.to_json, {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
       expect(response.status).to eq 422
     end
