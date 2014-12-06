@@ -47,7 +47,6 @@ describe 'User API Endpoint' do
     it 'returns only a response header' do
       expect(response.body).to eq " "
     end
-    
   end
 
   describe '#index' do
@@ -61,7 +60,6 @@ describe 'User API Endpoint' do
       json = JSON.parse(response.body)
       expect(json.length).to eq(1)
     end
-
   end
 
   describe '#show' do
@@ -84,15 +82,24 @@ describe 'User API Endpoint' do
   end
 
   describe '#create' do
-    it 'creates a new user' do
+    
+    before(:each) do
       post '/users',
       { user:
         { first_name: 'far', last_name: 'boo', username: 'farboo', role: 'generic', email: 'foz@baz.com', password: 'secret'}
       }.to_json, {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
+    end
+    
+    it 'creates a new user' do
       expect(response.status).to eq 201
     end
+    
+    it 'returns the location of the user' do
+      user = json(response.body)
+      expect(user_url(user[:id])).to eq response.location
+    end
 
-    # there is a bug here
+    # TODO: fix unpermitted params bug
     # I can pass in unpermitted params if I give the password param a value
     it 'refuses without the proper parameters' do
       post '/users',
@@ -102,6 +109,17 @@ describe 'User API Endpoint' do
       expect(response.status).to eq 422
     end
   end
+
+  describe '#update' do
+    it 'updates only the new params' do
+      
+    end
+  end
+
+  describe '#destroy' do
+  end
+
+
 end
 
 
