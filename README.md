@@ -42,6 +42,16 @@ Endpoints:
       expect(response.content_type).to eq Mime::JSON
 
 
+## Wish List
+
+* Token authentication :ballot_box_with_check:
+* Multiple oAuth Providers
+* Image urls pulled from feeds
+* Background workers to update feeds
+* Redis-based caching for oAuth provider feeds
+* Background workers to update oAuth provider feeds
+* 
+
 
 Features
 -----------
