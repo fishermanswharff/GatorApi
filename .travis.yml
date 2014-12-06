@@ -13,5 +13,10 @@ before_script:
 - psql -c 'create database travis_ci_test' -U postgres
 deploy:
   provider: heroku
+  app: gatorapi
   api_key:
     secure: el+UQKgjSj7/l5cg5fjRR59FDp5Ba3FUqQK/TLpw8EWSG0Ukk3sbwLWx4NSLfVY16DwpSfV2vBYxzU29zJD13W5FU6XrIbynFs3tkYzUZAth4wl/0MqTe2efdkV2tmp6Jp6mX3hv2Y6Vp1urlq56+KoM/wY/QfF+wokHCBa+v+s=
+  run:
+    - "rake db:migrate"
+    - restart
+    - "rake cleanup"
