@@ -13,8 +13,11 @@ gem 'linkedin'
 gem 'instagram'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'arel', '6.0.0.beta2'
+gem 'oauth'
 
 group :development, :test do
+  # thin start --ssl -p 3001
+  gem 'thin'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '~> 2.0.0.beta4'

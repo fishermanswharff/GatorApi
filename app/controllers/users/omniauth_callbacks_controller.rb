@@ -8,7 +8,7 @@ class Users::OmniauthCallbacksController < ApplicationController
   end
 
   def route_to_provider
-    
+    # binding.byebug
   end
   # I expect the passthru action to route a request to a provider's
   # request_token endpoint, and return a token: 

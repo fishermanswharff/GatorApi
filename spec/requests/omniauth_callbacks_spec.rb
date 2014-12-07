@@ -1,5 +1,7 @@
 require 'rails_helper'
 require 'spec_helper'
+require 'net/http'
+require 'uri'
 
 describe 'Omniauth Callbacks Controller' do
 
@@ -46,8 +48,25 @@ describe 'Omniauth Callbacks Controller' do
   end
 
   describe '#route_to_provider' do
-    it 'routes the request to the appropriate provider' do
+    before(:all) do
       
+    end
+    
+    it 'routes the request to the appropriate provider' do
+      expect(response.status).to eq 200
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
