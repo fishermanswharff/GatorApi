@@ -45,16 +45,23 @@ describe 'Omniauth Callbacks Controller' do
     it 'has a token from the authenticated user' do
       expect(request.params['token']).to eq @user.token
     end
-  end
-
-  describe '#route_to_provider' do
-    before(:all) do
-      
-    end
-    
     it 'routes the request to the appropriate provider' do
       expect(response.status).to eq 200
     end
+  end
+
+
+
+  describe '#route_to_provider' do
+    let(:provider) do
+      'twitter'
+    end
+
+    before(:all) do
+      get "/users/auth/#{}"
+    end
+    
+    
   end
 end
 
