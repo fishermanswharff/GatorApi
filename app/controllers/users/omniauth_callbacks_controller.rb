@@ -1,7 +1,7 @@
 class Users::OmniauthCallbacksController < ApplicationController
 
   def passthru
-    binding.byebug
+    # binding.byebug
     # token = request.params['token']
     # provider = request.filtered_parameters['provider']
     # user = User.where(token: @token)[0]
