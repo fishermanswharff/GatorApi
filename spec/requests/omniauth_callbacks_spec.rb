@@ -23,8 +23,6 @@ describe 'Omniauth Callbacks Controller' do
 
     # I expect passthru to act as a filter by parsing parameters and routing the 
     # oauth requests to the appropriate model
-    
-    
 
     let(:provider) do
       'twitter'
@@ -47,4 +45,9 @@ describe 'Omniauth Callbacks Controller' do
     end
   end
 
+  describe '#route_to_provider' do
+    it 'routes the request to the appropriate provider' do
+      
+    end
+  end
 end
