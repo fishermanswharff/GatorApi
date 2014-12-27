@@ -20,11 +20,7 @@ describe 'Omniauth Callbacks Controller' do
     post '/login',{ username: "foo", password: "secret" }
   end
 
-
   describe '#passthru' do
-
-    # I expect passthru to act as a filter by parsing parameters and routing the 
-    # oauth requests to the appropriate model
 
     let(:provider) do
       'twitter'
@@ -45,23 +41,10 @@ describe 'Omniauth Callbacks Controller' do
     it 'has a token from the authenticated user' do
       expect(request.params['token']).to eq @user.token
     end
+
     it 'routes the request to the appropriate provider' do
       expect(response.status).to eq 200
     end
-  end
-
-
-
-  describe '#route_to_provider' do
-    let(:provider) do
-      'twitter'
-    end
-
-    before(:all) do
-      get "/users/auth/#{}"
-    end
-    
-    
   end
 end
 

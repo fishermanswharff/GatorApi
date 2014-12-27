@@ -1,6 +1,5 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
@@ -29,8 +28,12 @@ module GatorApi
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    
+    config.api_only = false
+
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
 
     config.middleware.use Rack::SslEnforcer, only_environments: ['production', /^QA/]
     config.middleware.use Rack::Cors do
