@@ -33,8 +33,6 @@ module GatorApi
 
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
-
     config.middleware.use Rack::SslEnforcer, only_environments: ['production', /^QA/]
     config.middleware.use Rack::Cors do
       allow do
