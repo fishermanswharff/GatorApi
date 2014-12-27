@@ -3,7 +3,6 @@ class Users::OmniauthCallbacksController < ApplicationController
   def passthru
     @token = request.params['token']
     @provider = request.filtered_parameters['provider']
-    @user = User.where(token: @token)[0]
     route_to_provider
   end
 
@@ -12,8 +11,6 @@ class Users::OmniauthCallbacksController < ApplicationController
   end
 
   def prepare_twitter_access_token(oauth_token, oauth_token_secret, callback_url)
-    
-    binding.byebug
     @callback_url = callback_url
     @consumer = OAuth::Consumer.new(oauth_token, oauth_token_secret, :site => "https://api.twitter.com/oauth/request_token")
     @request_token = @consumer.get_request_token(:oauth_callback => @callback_url) #=> this needs to be a post request to https://api.twitter.com/oauth/request_token with an Authorization header containing the app's oauth token and token secret

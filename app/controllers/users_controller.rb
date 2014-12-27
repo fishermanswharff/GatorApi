@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   
   def login
     user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
+    if user = user.authenticate(params[:password])
+      session[:current_user_id] = user.token
       render json: { "token" => user.token }
     else
       head :unauthorized
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def logout
+    @current_user = session[:current_user_id] = nil
     head :ok
   end
 
