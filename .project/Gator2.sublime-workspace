@@ -1,0 +1,1215 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"User",
+				"UserAuthentication"
+			],
+			[
+				"reset",
+				"reset_password_token"
+			],
+			[
+				"last_sign",
+				"last_sign_in_at"
+			],
+			[
+				"favor",
+				"favorite_foods"
+			],
+			[
+				"years",
+				"years_experience"
+			],
+			[
+				"year",
+				"years_experience"
+			],
+			[
+				"——",
+				"———————————————————————————————————————————————————————————————————————————————————————————————"
+			],
+			[
+				"tinc",
+				"TinCanFactory"
+			],
+			[
+				"TinCan",
+				"TinCanFactory"
+			],
+			[
+				"tincan",
+				"tinCanJsApp"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"current",
+				"currentUserSkills"
+			],
+			[
+				"ngSan",
+				"ngSandboxApp"
+			],
+			[
+				"input",
+				"input	input - button"
+			],
+			[
+				"text",
+				"textarea	<textarea>"
+			],
+			[
+				"options",
+				"options_params"
+			],
+			[
+				"line_item",
+				"line_item_id"
+			],
+			[
+				"Active",
+				"ActiveModel::Serializer"
+			],
+			[
+				"Ac",
+				"ApplicationController"
+			],
+			[
+				"line_i",
+				"line_item"
+			],
+			[
+				"Activ",
+				"ActiveModel::Serializer"
+			],
+			[
+				"ACtiv",
+				"ActiveModel::Serializer"
+			],
+			[
+				"Applica",
+				"ApplicationController"
+			],
+			[
+				"Appli",
+				"ApplicationController"
+			],
+			[
+				"reset_p",
+				"reset_password_sent_at"
+			],
+			[
+				"ActiveRe",
+				"ActiveRecord::Base"
+			],
+			[
+				"time",
+				"timestamps"
+			],
+			[
+				"localho",
+				"localhost:3000"
+			],
+			[
+				"charset",
+				"charset=utf-8"
+			],
+			[
+				"protect",
+				"protected"
+			],
+			[
+				"Integ",
+				"IntegrationTest"
+			],
+			[
+				"find_",
+				"find_unarchived"
+			],
+			[
+				"ACtion",
+				"ActionDispatch::IntegrationTest"
+			],
+			[
+				"Su",
+				"SUCCESSFUL"
+			],
+			[
+				"HTTP",
+				"HTTP/1.1"
+			],
+			[
+				"del",
+				"delete_all"
+			],
+			[
+				"content",
+				"contentType"
+			],
+			[
+				"$",
+				"$.ajax	jQuery AJAX call"
+			],
+			[
+				"ajax",
+				"ajax	Google AJAX Libraries: jQuery UI"
+			],
+			[
+				"error",
+				"errorThrown"
+			],
+			[
+				"build",
+				"build_stubbed"
+			],
+			[
+				"first",
+				"firstTenPrime"
+			],
+			[
+				"typ",
+				"typeof"
+			],
+			[
+				"sci",
+				"script	Tag"
+			],
+			[
+				"another",
+				"another_way_to_write_class_methods"
+			],
+			[
+				"cu",
+				"currentPlayer"
+			],
+			[
+				"sc",
+				"script	Tag"
+			],
+			[
+				"label",
+				"label	<label>"
+			],
+			[
+				"winning",
+				"winning_combos"
+			],
+			[
+				"div",
+				"div	<div>"
+			],
+			[
+				"luck",
+				"luckyNumber"
+			],
+			[
+				"innerH",
+				"innerHTML"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"our",
+				"ourPlay"
+			],
+			[
+				"thei",
+				"theirPlay"
+			],
+			[
+				"get_u",
+				"get_unique_feeds"
+			],
+			[
+				"a",
+				"a	<a>"
+			],
+			[
+				"LINKEDIN",
+				"LINKEDIN_CONFIGURATION"
+			],
+			[
+				"get",
+				"get_user_feeds"
+			],
+			[
+				"redir",
+				"redirect_to"
+			],
+			[
+				"Actie",
+				"ActiveRecord::Base"
+			],
+			[
+				"img",
+				"image_tag	create a image	erb"
+			],
+			[
+				"access_",
+				"access_token_secret"
+			],
+			[
+				"face",
+				"facebook_index_path"
+			],
+			[
+				"http",
+				"HTTParty"
+			],
+			[
+				"FACE",
+				"FACEBOOK_APP_ID"
+			],
+			[
+				"Facebo",
+				"FacebookClient"
+			],
+			[
+				"git",
+				"github_rsa"
+			],
+			[
+				"fib",
+				"fib_nums"
+			],
+			[
+				"att",
+				"attr_reader"
+			],
+			[
+				"search",
+				"search_index"
+			],
+			[
+				"attr",
+				"attr_accessor"
+			],
+			[
+				"name_to",
+				"name_to_redact"
+			],
+			[
+				"can_",
+				"can_ride_3"
+			],
+			[
+				"DragAnd",
+				"DragAndDropController"
+			],
+			[
+				"$root",
+				"$rootScope	AngularJS(DI)"
+			],
+			[
+				"font",
+				"fontSizeLarge"
+			],
+			[
+				"max-",
+				"max-height"
+			],
+			[
+				"visib",
+				"visible"
+			],
+			[
+				"visi",
+				"visible"
+			],
+			[
+				"item",
+				"itemSize"
+			],
+			[
+				"append",
+				"appendChild"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"event",
+				"event"
+			],
+			[
+				"anch",
+				"anchorScroll"
+			],
+			[
+				"hgih",
+				"highlightSpy"
+			],
+			[
+				"highl",
+				"highlightSpy"
+			],
+			[
+				"sticky",
+				"stickyNav"
+			],
+			[
+				"window",
+				"windowTop"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"audi",
+				"audioplayer"
+			],
+			[
+				"state",
+				"stateParams"
+			],
+			[
+				"st",
+				"state"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"overflw",
+				"overflow-x"
+			],
+			[
+				"center",
+				"center"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"translate",
+				"translate3d"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"AM",
+				"AMail"
+			],
+			[
+				"titleCase",
+				"titleCaseFilter"
+			],
+			[
+				"total",
+				"totalCart"
+			],
+			[
+				"Cart",
+				"CartController"
+			],
+			[
+				"Restaurant",
+				"RestaurantTableController"
+			],
+			[
+				"bacg",
+				"background-color"
+			],
+			[
+				"marin",
+				"margin-bottom"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"h",
+				"html"
+			],
+			[
+				"vi",
+				"visibility"
+			],
+			[
+				"c",
+				"captions"
+			],
+			[
+				"backgroud",
+				"background-color"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"size",
+				"font-size"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"l",
+				"line-height"
+			],
+			[
+				"sty",
+				"stylesheet"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"requ",
+				"requireMain"
+			],
+			[
+				"require",
+				"requireMain"
+			],
+			[
+				"as",
+				"assetAttr"
+			],
+			[
+				"path",
+				"pathList"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
+			"settings":
+			{
+				"buffer_size": 3694,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Gator2 Push Origin",
+	"command_palette":
+	{
+		"height": 49.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"INSTA",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"resr",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"resrouce",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Ruby ",
+				"Set Syntax: Ruby"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"",
+				"Package Control: Create Package File"
+			],
+			[
+				"snippe",
+				"Snippet: html"
+			],
+			[
+				"html",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: d",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 579.0
+	},
+	"console":
+	{
+		"height": 649.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/models",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests"
+	],
+	"file_history":
+	[
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.env",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/models/user_spec.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/README.md",
+		"/Users/jason/Documents/JW-Website/Portfolio/jwapi/docs/raillsapi_codeschool.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/twitter_rest.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/omniauth_callbacks_spec.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/oauth-pry-sessions.sh",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/oauth-endpoints.rb",
+		"/Users/jason/Documents/JW-Website/Portfolio/jwapi/app/controllers/users_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/user.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/routes.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/serializers/user_serializer.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/seeds.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Gemfile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.travis.yml",
+		"/Users/jason/Documents/JW-Website/Portfolio/jwapi/config/database.yml.travis",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/database.yml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/README.md",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202145408_create_users.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/application_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.sh",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.xml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/Gator2.sublime-project",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.gitignore",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/user_authentication.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/authentication_provider.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/environments/development.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/tweets.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/routes.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/omniauth.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/application_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/tweets_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/Gruntfile.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/README.md",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/README.md",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/database.yml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/.travis.yml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/README.md",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/controllers/UserController.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/app.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/factories/MainFactory.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/views/main.html",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/index.html",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/views/login.html",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/views/dashboard.html",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/views/users.html",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/factories/UsersFactory.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/scripts/app.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/constants/constants.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/routes.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/scripts/controllers/MainController.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/scripts/controllers/UsersController.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/views/main.html",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/.project/Gator2.sublime-project",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/controllers/MainController.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/services/TraceService.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/app/scripts/directives/MainDirective.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/test/spec/controllers/main.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/test/spec/controllers/about.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/controllers/main.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/app/scripts/controllers/about.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/webapp/bower.json",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/bower.json",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/user.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/title.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/staffing_request.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/skill.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/project.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/dashboard.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/allocation.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/feeds_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/README.rdoc",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/description",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/HEAD",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/application.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/.git/COMMIT_EDITMSG",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/log/development.log",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/config/application.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/environments/test.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/environments/development.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/environment.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/application.rb",
+		"/Users/jason/Desktop/sort.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/config/routes.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/controllers/users_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/controllers/dashboards_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141203014622_create_user_authentications.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/db/seeds.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/views/home/index.html.erb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/user.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/initializers/devise.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/.env",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/user_authentication.rb",
+		"/Users/jason/Documents/UI/moodle/moodle26/lib/dtl/database_exporter.php",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/authentication_provider.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202181405_create_authentication_providers.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/migrate/20141020104914_create_user_authentications.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/migrate/20141020104913_create_authentication_providers.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/migrate/20141017200712_devise_create_users.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/seeds.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/modules/MediaGetter.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/db/migrate/20141112132959_create_users.rb",
+		"/Users/jason/Desktop/20141202143918_create_users.rb",
+		"/Users/jason/Desktop/Gemfile",
+		"/Users/jason/Desktop/tshirt-instructions.txt",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/.project/build.sh",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/.project/build.xml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngsandbox/.project/build.xml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngsandbox/.project/ngSandbox.sublime-project",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngsandbox/.project/build.sh",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/api/README.rdoc",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/Gemfile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/api/Gemfile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Blog/Gemfile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/source.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/spec/main_spec.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week11/notes.txt",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/main.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/example.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/README.md",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Final/lmsAPI/db/migrate/20141201215630_create_users.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Final/lmsAPI/Gemfile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/BobsBagels/api-1/Gemfile"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jason/Documents/WebDevImmersive/Projects/Gator2",
+			"/Users/jason/Documents/WebDevImmersive/Projects/Gator",
+			"/Users/jason/Documents/WebDevImmersive/Projects/",
+			"/Users/jason/Documents/WebDevImmersive/Projects/BobsBagels",
+			"/Users/jason/Documents/WebDevImmersive/Projects/",
+			"/Users/jason/Documents/WebDevImmersive/Projects/Gator",
+			"/Users/jason/Documents/WebDevImmersive/Projects/prework",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal/content/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/app/scripts",
+			"<open files>",
+			"/Users/jason/Documents/C4/c4cp-web-portal",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal",
+			"/Users/jason/Documents/C4/Omega",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/app/styles/less",
+			"/Users/jason/Documents/C4/c4cp-web-portal/",
+			"/Users/jason/Documents/C4/Omega/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/",
+			"/Users/jason/Documents/C4/Omega/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/app/styles/less",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal/moodle/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal/moodle/theme/courseware/less",
+			"/Users/jason/Documents/C4/Omega/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/app/styles/less",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/app/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/app/styles/less",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal/moodle/",
+			"/Users/jason/Documents/C4/c4cp-web-portal/moodle",
+			"/Users/jason/Documents/C4/Omega-SnowWhite",
+			"/Users/jason/Documents/C4/c4cp-web-portal",
+			"/Users/jason/Documents/C4/",
+			"/Users/jason/Documents/C4/c4cp-web-portal",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/",
+			"/Users/jason/Documents/C4/Omega-SnowWhite/app/styles/less",
+			"<open files>,/Users/jason/Documents/Center4SI/c4cp-web-portal/moodle/theme/t3courseware/less,/Users/jason/Documents/Center4SI/c4cp-web-portal/moodle/theme/t3courseware/less",
+			"<open files>,/Users/jason/Documents/Center4SI/c4cp-web-portal/moodle/theme/t3courseware/less",
+			"<open files>",
+			"<open files>,/Users/jason/Documents/Center4SI/Omega-SnowWhite/app",
+			"<open files>",
+			"/Users/jason/Documents/Center4SI/Omega-SnowWhite/app",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"      \n",
+			"Passthru",
+			"\\s",
+			"\\#",
+			"webappApp",
+			"webapp",
+			"_thirdParty",
+			"counter_cache",
+			"background: url(\"../images/bagels.jpg\") no-repeat center center fixed;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  -o-background-size: cover;",
+			"user_skill",
+			"last_name",
+			"first_name",
+			"div",
+			".container",
+			"GET",
+			"update_content",
+			"current_share",
+			"line_items",
+			"line_item",
+			".permit(",
+			"unique:",
+			"json",
+			"curl",
+			"Shop",
+			"session",
+			"debug",
+			".\",",
+			"carlos",
+			"avi",
+			"shayna",
+			"jason",
+			"Developer",
+			"[break;]",
+			"[",
+			"array",
+			"results",
+			"\":\"\"\n",
+			"[ ]",
+			"\n[",
+			"[ ]",
+			"while",
+			"array",
+			".times do",
+			".times",
+			"<script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js\"></script>",
+			"true",
+			"random",
+			"value",
+			"tttApp",
+			"();\n",
+			"        \n",
+			"\"",
+			"item",
+			"p",
+			"  \n",
+			"');\n",
+			"rock",
+			"favicon",
+			"the_alt",
+			"alts",
+			"images",
+			"page",
+			"the_src",
+			"twitter_client",
+			"identity",
+			"twitter_client",
+			"client",
+			"]),",
+			"rss_links",
+			"      \n",
+			"link_to",
+			"image_tag",
+			"update",
+			"LinkedIn",
+			"google-oauth2",
+			"controller",
+			"Time.now",
+			"lambda_demo",
+			"puts",
+			"to",
+			"type",
+			"chapter",
+			"/><",
+			"puts",
+			"html",
+			"$apply()",
+			"angular",
+			"images/",
+			"scormid=\"011\"",
+			"jquery",
+			";\n",
+			"menuItem",
+			"				\n",
+			";\n",
+			".retina-background",
+			".position",
+			"<link function=\"callWebAddress\"",
+			"http:",
+			"<link",
+			"<link>",
+			"WebkitPerspectiveOrigin",
+			" }",
+			" 					\n",
+			"'); ",
+			"didScroll",
+			"angular",
+			"noscroll",
+			";\n",
+			"clicked",
+			"visibility",
+			"@z-clickandreveal",
+			"one",
+			"transEndEventName",
+			"										",
+			"view-full",
+			"active",
+			"z-index",
+			"object",
+			"Object",
+			"Object object ",
+			"z-index",
+			";\n",
+			"placeholder",
+			"view-full",
+			"full-view",
+			" 					\n",
+			"Audio",
+			"AudioPlayer"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\n",
+			"",
+			"gatorApp",
+			"",
+			"'",
+			"",
+			"lesson",
+			"Audio",
+			"pElement",
+			"element",
+			"",
+			"courseConstructor",
+			"courseContructor",
+			"courseConstructor",
+			"",
+			"section.main-container",
+			"",
+			"type=\"module\"",
+			"last",
+			"  ",
+			" ",
+			"html",
+			"<component id=\"\" class=\"$1\" x=\"0\" y=\"0\"/>",
+			"\\n",
+			"images/Pipes/spritesheet/pipes_animation-easljs.png",
+			"images/Pipes/spritesheet/pipes_animation-easeljs.png"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								443,
+								443
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 14.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 84.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Gator2.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"rout",
+				"WDI/Projects/Blog/config/routes.rb"
+			],
+			[
+				"gem",
+				"WDI/Projects/Blog/Gemfile"
+			],
+			[
+				"rspec",
+				"UI/libs/EaselJS-release_v0.7.1/examples/SpriteSheetBuilderMC/SpriteSheetBuilder_MovieClip.html"
+			],
+			[
+				"",
+				"WebDevImmersive/Projects/prework/rb/14-RefactorFactory.rb"
+			],
+			[
+				"snippets",
+				"UI/html/HTML5 Graphics and Animation with Canvas/ExampleSnippets.txt"
+			],
+			[
+				"conte",
+				"src/client/js/classes/context.challenge.adventure.js"
+			],
+			[
+				"cotext",
+				"src/client/js/classes/context.challenge.adventure.js"
+			],
+			[
+				"adventr",
+				"www/xml/adventure.xml"
+			],
+			[
+				"adventurej",
+				"src/client/js/classes/adventure.js"
+			],
+			[
+				"pipes",
+				"src/client/js/classes/pipes.puzzles.adventure.js"
+			],
+			[
+				"udio",
+				"src/client/less/styles/udio.adventure.less"
+			],
+			[
+				"adven",
+				"src/client/js/classes/adventure.js"
+			],
+			[
+				"advent",
+				"src/client/xml/adventure.xml"
+			],
+			[
+				"ud",
+				"src/client/less/styles/udio.adventure.less"
+			],
+			[
+				"invent",
+				"src/client/js/classes/inventory.world.adventure.js"
+			],
+			[
+				"worl",
+				"src/client/js/classes/world.adventure.js"
+			],
+			[
+				"world",
+				"src/client/js/classes/world.adventure.js"
+			],
+			[
+				"sett",
+				"src/client/js/classes/settings.adventure.js"
+			],
+			[
+				"adv",
+				"src/client/xml/adventure.xml"
+			],
+			[
+				"xml",
+				"src/client/xml/adventure.xml"
+			],
+			[
+				"set",
+				"src/client/js/classes/settings.adventure.js"
+			],
+			[
+				"peddler.",
+				"src/client/js/classes/peddler.puzzles.adventure.js"
+			],
+			[
+				"avit",
+				"src/client/js/classes/avitar.world.adventure.js"
+			],
+			[
+				"coursecon",
+				"src/xml/CourseContent.xml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

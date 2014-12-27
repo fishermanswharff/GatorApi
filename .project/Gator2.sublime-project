@@ -1,0 +1,40 @@
+{
+  "build_systems": 
+  [
+    {
+      "cmd":
+      [
+        "ant",
+        "push",
+        "-f",
+        "${project_path:${folder}}/build.xml"
+      ],
+      "name": "Gator2 Push Origin",
+      "selector": "source.java"
+    }
+  ],
+  "folders":
+  [
+    {
+      "name": "GatorAPI",
+      "path": "/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi",
+      "file_exclude_patterns": [".gitingore"]
+    },
+    {
+      "name": "REFERENCE: Gator 1.0",
+      "path": "/Users/jason/Documents/WebDevImmersive/Projects/Gator",
+      "file_exclude_patterns": [".gitingore"]
+    },
+    {
+      "name": "REFERENCE: Staffing API for Angular Week",
+      "path": "/Users/jason/Documents/WebDevImmersive/Projects/week9/api", 
+      "file_exclude_patterns": [".gitingore"]
+    },
+    {
+      "name": "REFERENCE: ngSandbox",
+      "path": "/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox", 
+      "file_exclude_patterns": [".gitingore"]
+    }
+  ]
+
+}
