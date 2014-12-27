@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20141203014622) do
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["token"], name: "index_users_on_token", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
