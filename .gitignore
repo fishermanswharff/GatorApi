@@ -12,4 +12,4 @@
 /tmp
 .project
 # .env
-config/twitter.yml
+config/env.yml
