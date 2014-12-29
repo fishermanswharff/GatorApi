@@ -11,5 +11,5 @@
 /log/*.log
 /tmp
 .project
-.env
+# .env
 config/twitter.yml

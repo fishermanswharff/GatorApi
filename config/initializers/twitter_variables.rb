@@ -1,4 +1,4 @@
-module TwitterEnvironmentVariables
+module TwitterVariables
   class Application < Rails::Application
     config.before_configuration do
       env_file = Rails.root.join("config", 'twitter.yml').to_s
