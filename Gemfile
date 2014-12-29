@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.2"
+ruby "2.2.0"
 gem 'rails', '4.2.0.beta2'
 gem 'rails-api'
 gem 'unicorn'
@@ -11,7 +11,7 @@ gem 'feedjira'
 gem 'twitter'
 gem 'linkedin'
 gem 'instagram'
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt'
 gem 'arel', '6.0.0.beta2'
 gem 'oauth'
 gem 'redis-rails'
