@@ -13,17 +13,13 @@ gem 'linkedin'
 gem 'instagram'
 gem 'bcrypt'
 gem 'arel', '6.0.0.beta2'
-# gem 'oauth'
 gem 'redis-rails'
 
 group :development, :test do
-  # thin start --ssl -p 3001
-  # gem 'thin'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'web-console', '~> 2.0.0.beta4'
   gem 'spring'
-  gem 'dotenv-rails'
   gem 'bullet'
   gem 'rspec-rails', '~> 3.0.0'
   gem "factory_girl_rails", "~> 4.0"

@@ -66,9 +66,6 @@ GEM
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dotenv (1.0.2)
-    dotenv-rails (1.0.2)
-      dotenv (= 1.0.2)
     equalizer (0.0.9)
     erubis (2.7.0)
     factory_girl (4.5.0)
@@ -257,7 +254,6 @@ DEPENDENCIES
   bcrypt
   bullet
   codeclimate-test-reporter
-  dotenv-rails
   factory_girl_rails (~> 4.0)
   faker
   feedjira
