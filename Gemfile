@@ -13,7 +13,7 @@ gem 'linkedin'
 gem 'instagram'
 gem 'bcrypt'
 gem 'arel', '6.0.0.beta2'
-gem 'oauth'
+# gem 'oauth'
 gem 'redis-rails'
 
 group :development, :test do

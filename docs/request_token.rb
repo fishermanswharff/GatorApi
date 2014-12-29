@@ -1,5 +1,17 @@
 
-curl --get 'https://api.twitter.com/1.1/statuses/home_timeline.json' --header 'Authorization: OAuth oauth_consumer_key="Ja2vRzXC1C0KDw7uaNFbbWoZs", oauth_nonce="15dbb2e95b203a15d4af08b99b1d319a", oauth_signature="8Zqkl9zX5uJmuCl%2B%2B2byqyg%2BE5M%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1419862632", oauth_token="20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6", oauth_version="1.0"' --verbose
+curl 
+--get 
+'https://api.twitter.com/1.1/statuses/home_timeline.json' 
+--header 
+'Authorization: OAuth 
+  oauth_consumer_key="Ja2vRzXC1C0KDw7uaNFbbWoZs", 
+  oauth_nonce="15dbb2e95b203a15d4af08b99b1d319a", 
+  oauth_signature="8Zqkl9zX5uJmuCl%2B%2B2byqyg%2BE5M%3D", 
+  oauth_signature_method="HMAC-SHA1", 
+  oauth_timestamp="1419862632", 
+  oauth_token="20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6", 
+  oauth_version="1.0"' 
+--verbose
 
 
 

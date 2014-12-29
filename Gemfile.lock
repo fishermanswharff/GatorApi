@@ -263,7 +263,6 @@ DEPENDENCIES
   feedjira
   instagram
   linkedin
-  oauth
   pg
   pry-byebug
   pry-rails
