@@ -13,3 +13,4 @@
 .project
 # .env
 config/env.yml
+docs/oauth-pry-sessions.sh
