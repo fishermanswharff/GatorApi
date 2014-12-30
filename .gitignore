@@ -11,7 +11,7 @@
 /log/*.log
 /tmp
 .project
-# .env
+.env
 config/env.yml
 docs/oauth-pry-sessions.sh
 docs/oauth-pry-sessions.txt
