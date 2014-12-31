@@ -13,8 +13,6 @@ curl
   oauth_version="1.0"' 
 --verbose
 
-# new comment
-
 =begin
 
 To obtain a Request Token, the Consumer sends an HTTP request to the 
