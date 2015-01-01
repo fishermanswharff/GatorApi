@@ -26,8 +26,17 @@ module OAuth
       SecureRandom.uuid.gsub(/[\-\n\r]/,'')
     end
 
+    def oauth_token
+      ENV['TWITTER_ACCESS_TOKEN']
+    end
+
     def version
       "1.0"
     end
   end
 end
+
+=begin
+https://dev.twitter.com/oauth/overview/creating-signatures
+
+=end

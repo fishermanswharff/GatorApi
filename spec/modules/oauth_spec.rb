@@ -17,15 +17,5 @@ describe 'OAuth' do
         expect(@request.provider).to eq 'twitter'
       end
     end
-
-    it 'returns the appropriate consumer key' do
-      
-    end
-
-    it 'returns the signature method' do
-
-    end
-
-
   end
 end
