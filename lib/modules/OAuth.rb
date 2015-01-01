@@ -54,7 +54,7 @@ oauth_timestamp=Time.now.utc.strftime('%s').to_i
 oauth_token=ENV['TWITTER_ACCESS_TOKEN']
 oauth_version=1.0
 
-to create the signature, 
+to create the signature,
 
 =end
 
