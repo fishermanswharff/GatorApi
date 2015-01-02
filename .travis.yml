@@ -2,7 +2,13 @@ language: ruby
 rvm:
 - 2.2.0
 env:
-- DB=postgresql
+  matrix:
+  - DB=postgresql
+  global:
+  - secure: eQiDSPtf1lbfzOn/wKNrEXAIgQSN2ZdnvF+lmuoUVaZGx/zPapCyIFMum+vXCuT+ENAyxzXiwl9HCUfk8xz1w8QwsP3l/JZ6XTDWrE/196WIw1NfoGbmiBGCSs8UfBk0YqvTSpsMqmp5pQdrhoy3nXDfw8sJ061pn6coaEhx0YE=
+  - secure: CnbpJ4C09TM64no3GVhf4SoBGQ52nhJFcfZJrd6BKtJG5z0Lwzmq7VKxquKro9/LcHwMXVxcylydA9EBFgZI5tw+wMu3+JrFMBODYfy6GZMWGbnKO/4L9gKG17ka0Y9+bGFoByKWuPb2tUxZsfz+061YjlaXQiSn5FCOqOzXOaQ=
+  - secure: NNzRpz0av5bsAMNq925s8K5dUi0e6F2QYJ/8scMPO8eIFHwJuVw0gnhPuO9fxfxeqxMMdDVnPfuhuML14srJg8CGxI6j4mGoeCDhyo2tFPsf0iZC4WFqfGdKgyW40/rynnKq4o9Osv6+tBZJDaxytb504OgZmk+P2aCjgYcrC2k=
+  - secure: LWchbmZoU0STAXopyeQoa3z/MIvAwGngaHx8rkQOt9VyFMVUY6ZCztgwkRvG2awEAsErLcAsVJo+N1J4ZSXH46KWpcCrjglZQnHvhr0llehhQPJwDtJ6Hm6+IbBBZrPr5vXylF92iIolAHSvQQQTOLXe6dEVMOaER46dc5CrSmg=
 script:
 - CODECLIMATE_REPO_TOKEN=16d109f017a77e12e9af52396b903a991307530a27c1922ded94cfc0757a137a
   bundle exec rake
@@ -17,7 +23,7 @@ deploy:
   api_key:
     secure: el+UQKgjSj7/l5cg5fjRR59FDp5Ba3FUqQK/TLpw8EWSG0Ukk3sbwLWx4NSLfVY16DwpSfV2vBYxzU29zJD13W5FU6XrIbynFs3tkYzUZAth4wl/0MqTe2efdkV2tmp6Jp6mX3hv2Y6Vp1urlq56+KoM/wY/QfF+wokHCBa+v+s=
   run:
-    - "rake db:migrate"
-    - "rake db:seed"
-    - restart
-    - "rake cleanup"
+  - rake db:migrate
+  - rake db:seed
+  - restart
+  - rake cleanup

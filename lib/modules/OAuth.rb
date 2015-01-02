@@ -41,7 +41,7 @@ module OAuth
         if count == hash.length
           basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s
         else
-          basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s + "%26" 
+          basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s + "%26"
         end
       }
       basestring
@@ -52,22 +52,20 @@ module OAuth
     end
 
     def get_signing_key
-      CGI::escape(ENV['TWITTER_CONSUMER_SECRET'] + "&" + ENV['TWITTER_ACCESS_TOKEN'])
+      CGI::escape(ENV['TWITTER_CONSUMER_SECRET'] + "%26" + ENV['TWITTER_ACCESS_TOKEN'])
     end
 
     def calculate_signature
-      # digest = OpenSSL::Digest.new('sha1')
-      # hmac = OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), get_signing_key, get_signature_base_string)
-      # CGI::escape(Base64.encode64(hmac).chomp.gsub(/\n/, ''))
       CGI::escape(Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signing_key, get_signature_base_string)).gsub(/\n| |\r/,''))
     end
 
     def get_header_string
-      string = 'OAuth oauth_callback="' + "#{CGI::escape(@callback)}" + '", oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(get_nonce)}" + '", oauth_signature="' + "#{CGI::escape(calculate_signature)}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
-      return string
+      header = "OAuth"
+
+      # string = 'OAuth oauth_callback="' + "#{CGI::escape(@callback)}" + '", oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(get_nonce)}" + '", oauth_signature="' + "#{CGI::escape(calculate_signature)}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
+      # puts string
     end
     
-    # where request_data is
     def request_data(header, base_uri, method, post_data=nil)
       url = URI.parse(base_uri)
       http = Net::HTTP.new(url.host, 443) # set to 80 if not using HTTPS
