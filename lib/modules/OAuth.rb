@@ -1,4 +1,6 @@
 module OAuth
+
+  require 'net/http'
   
   class RequestToken
     
@@ -6,13 +8,17 @@ module OAuth
 
     def initialize(provider)
       @provider = provider
-      @nonce = SecureRandom.uuid.gsub(/[\-\n\r]/,'')
-      @timestamp = Time.now.utc.strftime('%s').to_i
+      # @nonce = SecureRandom.uuid.gsub(/[\-\n\r]/,'')
+      @timestamp = Time.now.utc.strftime('%s').to_i.to_s
       @callback = "http://127.0.0.1/users/auth/twitter/callback"
     end
 
     def get_method
       "POST"
+    end
+
+    def get_nonce
+      CGI::escape(Base64.encode64(OpenSSL::Random.random_bytes(64)).gsub(/\W/, ''))
     end
 
     def get_base_url
@@ -25,7 +31,7 @@ module OAuth
       hash = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
-        oauth_nonce: "#{@nonce}",
+        oauth_nonce: "#{get_nonce}",
         oauth_signature_method: "HMAC-SHA1",
         oauth_timestamp: "#{@timestamp}",
         oauth_version: "1.0"
@@ -35,7 +41,7 @@ module OAuth
         if count == hash.length
           basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s
         else
-          basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s + "&" 
+          basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s + "%26" 
         end
       }
       basestring
@@ -46,17 +52,36 @@ module OAuth
     end
 
     def get_signing_key
-      CGI::escape(ENV['TWITTER_CONSUMER_SECRET'] + "&")
+      CGI::escape(ENV['TWITTER_CONSUMER_SECRET'] + "&" + ENV['TWITTER_ACCESS_TOKEN'])
     end
 
     def calculate_signature
-      CGI::escape(Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signature_base_string, get_signing_key)).gsub(/\n| |\r/,''))
+      # digest = OpenSSL::Digest.new('sha1')
+      # hmac = OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), get_signing_key, get_signature_base_string)
+      # CGI::escape(Base64.encode64(hmac).chomp.gsub(/\n/, ''))
+      CGI::escape(Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signing_key, get_signature_base_string)).gsub(/\n| |\r/,''))
     end
 
-    def calculate_headers
-      string = 'Authorization: OAuth oauth_callback="' + "#{CGI::escape(@callback)}" + '", oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(@nonce)}" + '", oauth_signature="' + "#{CGI::escape(calculate_signature)}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
-      puts string
+    def get_header_string
+      string = 'OAuth oauth_callback="' + "#{CGI::escape(@callback)}" + '", oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(get_nonce)}" + '", oauth_signature="' + "#{CGI::escape(calculate_signature)}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
+      return string
     end
+    
+    # where request_data is
+    def request_data(header, base_uri, method, post_data=nil)
+      url = URI.parse(base_uri)
+      http = Net::HTTP.new(url.host, 443) # set to 80 if not using HTTPS
+      http.use_ssl = true # ignore if not using HTTPS
+      if method == 'POST'
+        # post_data here should be your encoded POST string, NOT an array
+        resp, data = http.post(url.path, post_data, { 'Authorization' => header })
+      else
+        resp, data = http.get(url.to_s, { 'Authorization' => header })
+      end
+      resp
+    end
+
+    # response = request_data(get_header_string, get_base_url, get_method)
 
   end
 end

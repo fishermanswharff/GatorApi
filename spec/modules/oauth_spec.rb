@@ -25,17 +25,23 @@ describe 'OAuth' do
       end
     end
 
+    describe '#get_nonce' do
+      it 'returns a unique string that is only used once' do
+        p @request.get_nonce
+      end
+    end
+
     describe '#get_base_url' do
       it 'returns the base url to send the request' do
-        p @request.get_base_url
         expect(@request.get_base_url).to eq 'https://api.twitter.com/oauth/request_token'
+        p @request.get_base_url
       end
     end
 
     describe '#collect_parameters' do
       it 'returns the base string of all the parameters' do
-        p @request.collect_parameters
         expect(@request.collect_parameters.class).to be String
+        p @request.collect_parameters
       end
     end
 
@@ -59,8 +65,23 @@ describe 'OAuth' do
 
     describe '#calculate_headers' do
       it 'should return a string for a curl header' do
-        p @request.calculate_headers
+        p @request.get_header_string
+      end
+    end
+
+    describe '#request_data' do
+      it 'should send a request' do
+        response = @request.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
+        p response, response.body
       end
     end
   end
 end
+
+
+
+
+
+
+
+
