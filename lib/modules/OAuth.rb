@@ -23,6 +23,7 @@ module OAuth
       count = 0
       basestring = ""
       hash = {
+        oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
         oauth_nonce: "#{@nonce}",
         oauth_signature_method: "HMAC-SHA1",
@@ -45,7 +46,7 @@ module OAuth
     end
 
     def get_signing_key
-      CGI::escape(ENV['TWITTER_CONSUMER_SECRET']) + "&" + CGI::escape(ENV['TWITTER_ACCESS_SECRET'])
+      CGI::escape(ENV['TWITTER_CONSUMER_SECRET'] + "&")
     end
 
     def calculate_signature
@@ -53,7 +54,7 @@ module OAuth
     end
 
     def calculate_headers
-      string = 'Authorization: OAuth oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(@nonce)}" + '", oauth_signature="' + "#{calculate_signature}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
+      string = 'Authorization: OAuth oauth_callback="' + "#{CGI::escape(@callback)}" + '", oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(@nonce)}" + '", oauth_signature="' + "#{CGI::escape(calculate_signature)}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
       puts string
     end
 
