@@ -38,6 +38,13 @@ describe 'OAuth' do
       end
     end
 
+    describe '#params' do
+      it 'returns a hash of params' do
+        expect(@request.params.class).to eq Hash
+        p @request.params
+      end
+    end
+
     describe '#collect_parameters' do
       it 'returns the base string of all the parameters' do
         expect(@request.collect_parameters.class).to be String

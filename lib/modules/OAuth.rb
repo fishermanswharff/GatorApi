@@ -8,7 +8,8 @@ module OAuth
 
     def initialize(provider)
       @provider = provider
-      # @nonce = SecureRandom.uuid.gsub(/[\-\n\r]/,'')
+      @consumer_key = ENV['TWITTER_CONSUMER_KEY']
+      @consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
       @timestamp = Time.now.utc.strftime('%s').to_i.to_s
       @callback = "http://127.0.0.1/users/auth/twitter/callback"
     end
@@ -25,10 +26,8 @@ module OAuth
       @base_url = "https://api.twitter.com/oauth/request_token"
     end
 
-    def collect_parameters
-      count = 0
-      basestring = ""
-      hash = {
+    def params
+      params = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
         oauth_nonce: "#{get_nonce}",
@@ -36,15 +35,12 @@ module OAuth
         oauth_timestamp: "#{@timestamp}",
         oauth_version: "1.0"
       }
-      hash.each { |key,value| 
-        count += 1
-        if count == hash.length
-          basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s
-        else
-          basestring << CGI::escape(key.to_s) + "=" + CGI::escape(value).to_s + "%26"
-        end
-      }
-      basestring
+    end
+
+    def collect_parameters
+      count = 0
+      basestring = ""
+      params.sort.collect{ |k, v| CGI::escape("#{k}=#{v}") }.join('%26')
     end
 
     def get_signature_base_string
@@ -60,10 +56,11 @@ module OAuth
     end
 
     def get_header_string
-      header = "OAuth"
-
-      # string = 'OAuth oauth_callback="' + "#{CGI::escape(@callback)}" + '", oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(get_nonce)}" + '", oauth_signature="' + "#{CGI::escape(calculate_signature)}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
-      # puts string
+      header = "OAuth "
+      params.each do |k,v|
+        header << "#{k}=\"#{CGI::escape(v)}\", "
+      end
+      header.slice(0..-3)
     end
     
     def request_data(header, base_uri, method, post_data=nil)
@@ -78,9 +75,6 @@ module OAuth
       end
       resp
     end
-
-    # response = request_data(get_header_string, get_base_url, get_method)
-
   end
 end
 
