@@ -2,10 +2,13 @@ module OAuth
   
   class RequestToken
     
-    attr_accessor :provider
+    attr_accessor :provider, :nonce, :timestamp, :callback
 
     def initialize(provider)
       @provider = provider
+      @nonce = SecureRandom.uuid.gsub(/[\-\n\r]/,'')
+      @timestamp = Time.now.utc.strftime('%s').to_i
+      @callback = "http://127.0.0.1/users/auth/twitter/callback"
     end
 
     def get_method
@@ -13,19 +16,17 @@ module OAuth
     end
 
     def get_base_url
-      "https://api.twitter.com/oauth/request_token"
+      @base_url = "https://api.twitter.com/oauth/request_token"
     end
 
     def collect_parameters
       count = 0
       basestring = ""
       hash = {
-        oauth_callback: "http://127.0.0.1/users/auth/twitter/callback",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
-        oauth_nonce: "#{SecureRandom.uuid.gsub(/[\-\n\r]/,'')}",
+        oauth_nonce: "#{@nonce}",
         oauth_signature_method: "HMAC-SHA1",
-        oauth_timestamp: "#{Time.now.utc.strftime('%s').to_i}",
-        oauth_token: "#{ENV['TWITTER_ACCESS_TOKEN']}",
+        oauth_timestamp: "#{@timestamp}",
         oauth_version: "1.0"
       }
       hash.each { |key,value| 
@@ -44,15 +45,22 @@ module OAuth
     end
 
     def get_signing_key
-      CGI::escape(ENV['TWITTER_CONSUMER_SECRET']) + "&"
+      CGI::escape(ENV['TWITTER_CONSUMER_SECRET']) + "&" + CGI::escape(ENV['TWITTER_ACCESS_SECRET'])
     end
 
     def calculate_signature
-      Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signature_base_string, get_signing_key)).gsub(/\n| |\r/,'')
+      CGI::escape(Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signature_base_string, get_signing_key)).gsub(/\n| |\r/,''))
+    end
+
+    def calculate_headers
+      string = 'Authorization: OAuth oauth_consumer_key="'+"#{CGI::escape(ENV['TWITTER_CONSUMER_KEY'])}" + '", oauth_nonce="'+ "#{CGI::escape(@nonce)}" + '", oauth_signature="' + "#{calculate_signature}" + '", oauth_signature_method="HMAC-SHA1", oauth_timestamp="' + "#{@timestamp}" + '", oauth_version="1.0"'
+      puts string
     end
 
   end
 end
+
+
 
 =begin
 https://dev.twitter.com/oauth/overview/creating-signatures
