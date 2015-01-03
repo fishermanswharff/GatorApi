@@ -16,32 +16,46 @@ describe 'OAuth' do
       it 'returns the provider passed as the parameter' do
         expect(@request.provider).to eq 'twitter'
       end
+      it 'sets the values needed' do
+        expect(@request.consumer_key).to eq ENV['TWITTER_CONSUMER_KEY']
+        expect(@request.consumer_secret).to eq ENV['TWITTER_CONSUMER_SECRET']
+        expect(@request.callback).to eq "http://127.0.0.1/users/auth/twitter/callback"
+      end
+    end
+
+    describe '#url_encode' do
+      it 'percent encodes the string' do
+        expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2F127.0.0.1%2Fusers%2Fauth%2Ftwitter%2Fcallback"
+      end
     end
 
     describe '#get_method' do
       it 'returns the http request method' do
-        p @request.get_method
         expect(@request.get_method).to eq 'POST'
       end
     end
 
     describe '#get_nonce' do
       it 'returns a unique string that is only used once' do
-        p @request.get_nonce
       end
     end
 
     describe '#get_base_url' do
       it 'returns the base url to send the request' do
         expect(@request.get_base_url).to eq 'https://api.twitter.com/oauth/request_token'
-        p @request.get_base_url
       end
     end
 
     describe '#params' do
       it 'returns a hash of params' do
         expect(@request.params.class).to eq Hash
-        p @request.params
+      end
+    end
+
+    describe '#add_signature_to_params' do
+      it 'appends a key/value pair to the params hash' do
+        signature = @request.calculate_signature
+        # expect(@request.add_signature_to_params(signature)).to eq {}
       end
     end
 
@@ -60,7 +74,7 @@ describe 'OAuth' do
 
     describe '#get_signing_key' do
       it 'should return secrets' do
-        p @request.get_signing_key
+        
       end
     end
 
@@ -79,7 +93,7 @@ describe 'OAuth' do
     describe '#request_data' do
       it 'should send a request' do
         response = @request.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
-        p response, response.body
+        p response.body
       end
     end
   end

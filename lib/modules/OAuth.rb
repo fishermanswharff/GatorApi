@@ -4,30 +4,15 @@ module OAuth
   
   class RequestToken
     
-    attr_accessor :provider, :nonce, :timestamp, :callback
+    attr_accessor :provider, :consumer_key, :consumer_secret, :base_url, :timestamp, :callback, :params
 
     def initialize(provider)
       @provider = provider
       @consumer_key = ENV['TWITTER_CONSUMER_KEY']
       @consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
-      @timestamp = Time.now.utc.strftime('%s').to_i.to_s
+      @timestamp = Time.now.utc.to_i.to_s
       @callback = "http://127.0.0.1/users/auth/twitter/callback"
-    end
-
-    def get_method
-      "POST"
-    end
-
-    def get_nonce
-      CGI::escape(Base64.encode64(OpenSSL::Random.random_bytes(64)).gsub(/\W/, ''))
-    end
-
-    def get_base_url
-      @base_url = "https://api.twitter.com/oauth/request_token"
-    end
-
-    def params
-      params = {
+      @params = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
         oauth_nonce: "#{get_nonce}",
@@ -37,28 +22,47 @@ module OAuth
       }
     end
 
+    def url_encode(value)
+      CGI::escape(value)
+    end
+
+    def get_method
+      "POST"
+    end
+
+    def get_nonce
+      Base64.encode64(OpenSSL::Random.random_bytes(64)).gsub(/\W/, '')
+    end
+
+    def get_base_url
+      @base_url = "https://api.twitter.com/oauth/request_token"
+    end
+
+    def add_signature_to_params(value)
+      @params[:oauth_signature] = value
+    end
+
     def collect_parameters
-      count = 0
-      basestring = ""
-      params.sort.collect{ |k, v| CGI::escape("#{k}=#{v}") }.join('%26')
+      @params.sort.collect{ |k, v| "#{k}=#{url_encode(v)}" }.join('&')
     end
 
     def get_signature_base_string
-      get_method + "&" + CGI::escape(get_base_url) + "&" + CGI::escape(collect_parameters)
+      get_method + "&" + url_encode(get_base_url) + "&" + collect_parameters
     end
 
     def get_signing_key
-      CGI::escape(ENV['TWITTER_CONSUMER_SECRET'] + "%26" + ENV['TWITTER_ACCESS_TOKEN'])
+      ENV['TWITTER_CONSUMER_SECRET'] + "&"
     end
 
     def calculate_signature
-      CGI::escape(Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signing_key, get_signature_base_string)).gsub(/\n| |\r/,''))
+      url_encode(Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signing_key, get_signature_base_string)).gsub(/\n| |\r/,''))
     end
 
     def get_header_string
+      add_signature_to_params(calculate_signature)
       header = "OAuth "
-      params.each do |k,v|
-        header << "#{k}=\"#{CGI::escape(v)}\", "
+      @params.sort.each do |k,v|
+        header << "#{k}=\"#{url_encode(v)}\", "
       end
       header.slice(0..-3)
     end
