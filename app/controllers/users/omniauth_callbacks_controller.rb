@@ -1,6 +1,8 @@
 require Rails.root.join('lib/modules/OAuth')
 class Users::OmniauthCallbacksController < ApplicationController
 
+  # attr_accessor :token, :provider, :request
+
   def passthru
     @token = request.params['token']
     @provider = request.filtered_parameters['provider']
@@ -10,11 +12,7 @@ class Users::OmniauthCallbacksController < ApplicationController
   def request_token(provider)
     @request = OAuth::RequestToken.new(@provider)
     response = @request.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
-    p response, response.body
-  end
-
-  def twitter_callback
-    binding.pry
+    # @oauth_token = response.body.filtered_parameters['oauth_token']
   end
 
 

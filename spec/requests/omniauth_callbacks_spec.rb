@@ -31,6 +31,7 @@ describe 'Omniauth Callbacks Controller' do
     end
 
     it 'gets the filters out the provider' do
+      
     end
   end
 end
