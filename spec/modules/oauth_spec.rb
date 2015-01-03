@@ -54,7 +54,6 @@ describe 'OAuth' do
 
     describe '#add_signature_to_params' do
       it 'appends a key/value pair to the params hash' do
-        signature = @request.calculate_signature
         # expect(@request.add_signature_to_params(signature)).to eq {}
       end
     end
@@ -62,38 +61,36 @@ describe 'OAuth' do
     describe '#collect_parameters' do
       it 'returns the base string of all the parameters' do
         expect(@request.collect_parameters.class).to be String
-        p @request.collect_parameters
       end
     end
 
     describe '#get_signature_base_string' do
       it 'should percent encode the base string' do
-        p @request.get_signature_base_string
       end
     end
 
     describe '#get_signing_key' do
       it 'should return secrets' do
-        
       end
     end
 
     describe '#calculate_signature' do
       it 'should encrypt the signature base string with the signing key' do
-        p @request.calculate_signature
       end
     end
 
-    describe '#calculate_headers' do
+    describe '#get_header_string' do
       it 'should return a string for a curl header' do
-        p @request.get_header_string
       end
     end
 
     describe '#request_data' do
       it 'should send a request' do
-        response = @request.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
-        p response.body
+        @token_req = OAuth::RequestToken.new('twitter')
+        response = @token_req.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
+        puts @token_req.get_signature_base_string, @token_req.get_header_string, @token_req.calculate_signature
+
+        p response,response.body
       end
     end
   end

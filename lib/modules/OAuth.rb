@@ -13,7 +13,6 @@ module OAuth
       @timestamp = Time.now.utc.to_i.to_s
       @callback = "http://127.0.0.1/users/auth/twitter/callback"
       @params = {
-        oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
         oauth_nonce: "#{get_nonce}",
         oauth_signature_method: "HMAC-SHA1",
@@ -31,7 +30,7 @@ module OAuth
     end
 
     def get_nonce
-      Base64.encode64(OpenSSL::Random.random_bytes(64)).gsub(/\W/, '')
+      SecureRandom.uuid.gsub(/\-|\n|\r/,'')
     end
 
     def get_base_url
@@ -43,19 +42,22 @@ module OAuth
     end
 
     def collect_parameters
-      @params.sort.collect{ |k, v| "#{k}=#{url_encode(v)}" }.join('&')
+      @params.sort.collect{ |k, v| "#{url_encode(k.to_s)}=#{url_encode(v)}" }.join('&')
     end
 
     def get_signature_base_string
-      get_method + "&" + url_encode(get_base_url) + "&" + collect_parameters
+      get_method + "&" + url_encode(get_base_url) + "&" + url_encode(collect_parameters)
     end
 
     def get_signing_key
-      ENV['TWITTER_CONSUMER_SECRET'] + "&"
+      url_encode(ENV['TWITTER_CONSUMER_SECRET']) + "&"
     end
 
     def calculate_signature
-      url_encode(Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'),get_signing_key, get_signature_base_string)).gsub(/\n| |\r/,''))
+      # digest = OpenSSL::Digest.new('sha1')
+      # hmac = OpenSSL::HMAC.digest(digest, get_signing_key, get_signature_base_string)
+      # Base64.encode64(hmac).chomp.gsub(/\n/, '')
+      Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), get_signing_key, get_signature_base_string)).gsub(/\n| |\r/,'')
     end
 
     def get_header_string
@@ -73,7 +75,7 @@ module OAuth
       http.use_ssl = true # ignore if not using HTTPS
       if method == 'POST'
         # post_data here should be your encoded POST string, NOT an array
-        resp, data = http.post(url.path, post_data, { 'Authorization' => header })
+        resp, data = http.post(base_uri, post_data, { 'Content-Type'=> '', 'Authorization' => header })
       else
         resp, data = http.get(url.to_s, { 'Authorization' => header })
       end
@@ -81,27 +83,4 @@ module OAuth
     end
   end
 end
-
-
-
-=begin
-https://dev.twitter.com/oauth/overview/creating-signatures
-Every oauth_* parameter needs to be included in the signature
-
-POST
-https://api.twitter.com/oauth/request_token
-oauth_callback=http://127.0.0.1/users/auth/twitter/callback
-oauth_consumer_key=ENV['TWITTER_CONSUMER_KEY']
-oauth_nonce=SecureRandom.uuid.gsub(/[\-\n\r]/,'')
-oauth_signature_method=HMAC-SHA1
-oauth_timestamp=Time.now.utc.strftime('%s').to_i
-oauth_token=ENV['TWITTER_ACCESS_TOKEN']
-oauth_version=1.0
-
-to create the signature,
-
-=end
-
-# "POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&oauth_callback=http%3A%2F%2F127.0.0.1%2Fusers%2Fauth%2Ftwitter%2Fcallbackoauth_consumer_key=Ja2vRzXC1C0KDw7uaNFbbWoZsoauth_nonce=cd2cb72df8414e5184be15f6046c5316oauth_signature_method=HMAC-SHA1oauth_timestamp=1420154407oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6oauth_version=1.0"
-
 
