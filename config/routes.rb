@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/' => redirect('https://github.com/fishermanswharff/GatorApi')
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
   
-  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

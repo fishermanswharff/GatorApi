@@ -13,6 +13,7 @@ module OAuth
       @timestamp = Time.now.utc.to_i.to_s
       @callback = "http://127.0.0.1/users/auth/twitter/callback"
       @params = {
+        oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
         oauth_nonce: "#{get_nonce}",
         oauth_signature_method: "HMAC-SHA1",
@@ -54,9 +55,6 @@ module OAuth
     end
 
     def calculate_signature
-      # digest = OpenSSL::Digest.new('sha1')
-      # hmac = OpenSSL::HMAC.digest(digest, get_signing_key, get_signature_base_string)
-      # Base64.encode64(hmac).chomp.gsub(/\n/, '')
       Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), get_signing_key, get_signature_base_string)).gsub(/\n| |\r/,'')
     end
 

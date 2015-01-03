@@ -1,14 +1,23 @@
+require Rails.root.join('lib/modules/OAuth')
 class Users::OmniauthCallbacksController < ApplicationController
 
   def passthru
     @token = request.params['token']
     @provider = request.filtered_parameters['provider']
+    request_token(@provider)
   end
 
-  def route_to_provider
-    prepare_twitter_access_token(ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_ACCESS_SECRET"], 'http://127.0.0.1/users/auth/twitter/callback') if @provider == 'twitter'
+  def request_token(provider)
+    @request = OAuth::RequestToken.new(@provider)
+    response = @request.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
+    p response, response.body
   end
-  
+
+  def twitter_callback
+    binding.pry
+  end
+
+
 
   # consumer = OAuth::Consumer.new(ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], { :site => "https://api.twitter.com", :scheme => :header })
   # token_hash = { :oauth_token => oauth_token, :oauth_token_secret => oauth_token_secret }
@@ -24,7 +33,8 @@ class Users::OmniauthCallbacksController < ApplicationController
   # I expect the passthru action to route a request to a provider's
   # request_token endpoint, and return a token: 
   # https://api.twitter.com/oauth/request_token
-  # which then gets used to authorize Gator,
-  # which results in a params hash returned from provider,
+  # which returns an unauthorized oauth token and oauth secret
+  # then redirect the user, along with their oauth token and secret to provider to authorize
+  # which results in a params hash returned from provider upon successful authorization
   # which should get saved as a UserAuthentication on the user
 end

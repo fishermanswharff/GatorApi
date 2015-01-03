@@ -88,8 +88,6 @@ describe 'OAuth' do
       it 'should send a request' do
         @token_req = OAuth::RequestToken.new('twitter')
         response = @token_req.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
-        puts @token_req.get_signature_base_string, @token_req.get_header_string, @token_req.calculate_signature
-
         p response,response.body
       end
     end
