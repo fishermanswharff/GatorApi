@@ -1,8 +1,6 @@
 require Rails.root.join('lib/modules/OAuth')
 class Users::OmniauthCallbacksController < ApplicationController
 
-  # attr_accessor :token, :provider, :request
-
   def passthru
     @token = request.params['token']
     @provider = request.filtered_parameters['provider']
@@ -29,7 +27,6 @@ class Users::OmniauthCallbacksController < ApplicationController
     # which should return something like this in the body:
     # oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6&oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur&user_id=20350433&screen_name=jasonwharff
     # at this point, UserAuthentication kicks in and creates from omniauth
-    binding.byebug
   end
 
   def strip_token(string)
@@ -39,24 +36,4 @@ class Users::OmniauthCallbacksController < ApplicationController
   def strip_verifier(string)
     string.scan(/oauth_verifier=\w+/)[0]
   end
-
-
-  # consumer = OAuth::Consumer.new(ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], { :site => "https://api.twitter.com", :scheme => :header })
-  # token_hash = { :oauth_token => oauth_token, :oauth_token_secret => oauth_token_secret }
-  # access_token = OAuth::AccessToken.from_hash(consumer, token_hash)
-  # request_token(access_token)
-  # return access_token
-  # uri = URI("https://api.twitter.com/oauth/request_token")
-  # http = Net::HTTP.new(uri.host,uri.port,initheader = {'Content-Type' =>'application/json', :use_ssl => uri.scheme == 'https'})
-  # req = Net::HTTP::Post.new uri
-  # req['Authorization'] = access_token
-
-
-  # I expect the passthru action to route a request to a provider's
-  # request_token endpoint, and return a token: 
-  # https://api.twitter.com/oauth/request_token
-  # which returns an unauthorized oauth token and oauth secret
-  # then redirect the user, along with their oauth token and secret to provider to authorize
-  # which results in a params hash returned from provider upon successful authorization
-  # which should get saved as a UserAuthentication on the user
 end
