@@ -20,18 +20,16 @@ describe 'Omniauth Callbacks Controller' do
     post '/login',{ username: "foo", password: "secret" }
   end
 
-  describe '#passthru' do
-
+  describe '#passthru and #request_token' do
     let(:provider) do
       'twitter'
     end
-
-    before(:each) do
-      post "/users/auth/#{provider}",{ "token" => @user.token }
-    end
-
-    it 'gets the filters out the provider' do
-      
+    it 'filters the provider and token, sends request for token' do
+      post "/users/auth/#{:provider}",{ "token" => @user.token }
+      expect(response.status).to eq 200
+      params = json(response.body)
+      expect(params.length).to eq 2
+      p params
     end
   end
 end

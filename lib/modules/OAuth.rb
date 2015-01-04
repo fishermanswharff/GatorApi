@@ -80,5 +80,13 @@ module OAuth
       resp
     end
   end
-end
 
+  class Authentication 
+    def self.get_authentication(base_uri, params)
+      url = URI.parse(base_uri)
+      http = Net::HTTP.new(url.host,443)
+      http.use_ssl = true
+      resp = http.get(base_uri+"?"+params)
+    end
+  end
+end
