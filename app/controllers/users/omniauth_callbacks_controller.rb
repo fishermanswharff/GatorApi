@@ -20,7 +20,7 @@ class Users::OmniauthCallbacksController < ApplicationController
   end
 
   def twitter_callback
-    fullpath = response.request.fullpath
+    fullpath = request.fullpath
     token_params = strip_token(fullpath)
     oauth_verifier = strip_verifier(fullpath)
     # here I need to pass the token and verifier into OAuth::AccessToken.new()
