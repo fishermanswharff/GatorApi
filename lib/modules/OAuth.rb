@@ -146,9 +146,6 @@ module OAuth
     end
 
     def request_data(header, base_uri, method, post_data=nil)
-
-      binding.pry
-
       url = URI.parse(base_uri)
       http = Net::HTTP.new(url.host, 443) # set to 80 if not using HTTPS
       http.use_ssl = true # ignore if not using HTTPS
