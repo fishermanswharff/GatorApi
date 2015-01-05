@@ -19,13 +19,14 @@ describe 'OAuth' do
       it 'sets the values needed' do
         expect(@request.consumer_key).to eq ENV['TWITTER_CONSUMER_KEY']
         expect(@request.consumer_secret).to eq ENV['TWITTER_CONSUMER_SECRET']
-        expect(@request.callback).to eq "http://127.0.0.1/users/auth/twitter/callback"
+        expect(@request.callback).to eq "http://localhost:9000/#/users/auth/twitter/callback"
       end
     end
 
     describe '#url_encode' do
       it 'percent encodes the string' do
-        expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2F127.0.0.1%2Fusers%2Fauth%2Ftwitter%2Fcallback"
+        p @request.url_encode(@request.callback)
+        expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2Flocalhost%3A9000%2Fusers%2Fauth%2Ftwitter%2Fcallback"
       end
     end
 

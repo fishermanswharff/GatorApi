@@ -11,7 +11,7 @@ module OAuth
       @consumer_key = ENV['TWITTER_CONSUMER_KEY']
       @consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
       @timestamp = Time.now.utc.to_i.to_s
-      @callback = "http://127.0.0.1/users/auth/twitter/callback"
+      @callback = 'http://localhost:3000/users/auth/twitter/callback'
       @params = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",

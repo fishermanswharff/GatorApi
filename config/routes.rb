@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'users#logout'
   get '/' => redirect('https://github.com/fishermanswharff/GatorApi')
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
-  get '/users/auth/twitter/callback', to: 'users/omniauth_callbacks#twitter_callback'
+  match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter_callback', via: [:get,:post]
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
