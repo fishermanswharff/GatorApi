@@ -30,6 +30,8 @@ class Users::OmniauthCallbacksController < ApplicationController
     # user_id=20350433
     # screen_name=jasonwharff
     
+    # "oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6&oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur&user_id=20350433&screen_name=jasonwharff"
+
     # combine user_token, response.body into a new UserAuthentication
 
     # redirect front end app to the root
