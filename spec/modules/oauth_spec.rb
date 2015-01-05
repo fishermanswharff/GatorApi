@@ -26,7 +26,7 @@ describe 'OAuth' do
     describe '#url_encode' do
       it 'percent encodes the string' do
         p @request.url_encode(@request.callback)
-        expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2Flocalhost%3A9000%2Fusers%2Fauth%2Ftwitter%2Fcallback"
+        expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2Flocalhost%3A9000%2F%23%2Fusers%2Fauth%2Ftwitter%2Fcallback"
       end
     end
 

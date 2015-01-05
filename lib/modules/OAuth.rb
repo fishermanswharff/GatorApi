@@ -6,12 +6,12 @@ module OAuth
     
     attr_accessor :provider, :consumer_key, :consumer_secret, :base_url, :timestamp, :callback, :params
 
-    def initialize(provider)
+    def initialize(provider,user_token)
       @provider = provider
       @consumer_key = ENV['TWITTER_CONSUMER_KEY']
       @consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
       @timestamp = Time.now.utc.to_i.to_s
-      @callback = 'http://localhost:3000/users/auth/twitter/callback'
+      @callback = 'http://localhost:3000/users/auth/twitter/callback?user-token=' + "#{user_token}"
       @params = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
@@ -80,13 +80,6 @@ module OAuth
       resp
     end
   end
+  
 
-  class Authentication 
-    def self.get_authentication(base_uri, params)
-      url = URI.parse(base_uri)
-      http = Net::HTTP.new(url.host,443)
-      http.use_ssl = true
-      resp = http.get(base_uri+"?"+params)
-    end
-  end
 end

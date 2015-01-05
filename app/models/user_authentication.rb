@@ -5,6 +5,9 @@ class UserAuthentication < ActiveRecord::Base
   serialize :params
 
   def self.create_from_omniauth(params, user, provider)
+
+    binding.pry 
+    
     token_expires_at = params['credentials']['expires_at'] ? Time.at(params['credentials']['expires_at']).to_datetime : nil
 
     create(
