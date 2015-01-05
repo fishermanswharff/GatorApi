@@ -25,7 +25,7 @@ describe 'Omniauth Callbacks Controller' do
       'twitter'
     end
     it 'filters the provider and token, sends request for token' do
-      post "/users/auth/#{:provider}",{ "token" => @user.token }
+      post "/users/auth/#{:provider}",{},{'HTTP_AUTHORIZATION' => "Token token='#{@user.token}'"}
       expect(response.status).to eq 200
       params = json(response.body)
       expect(params.length).to eq 2
@@ -33,16 +33,3 @@ describe 'Omniauth Callbacks Controller' do
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-

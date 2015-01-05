@@ -28,6 +28,10 @@ users = User.create([
 AuthenticationProvider.create(name: 'twitter')
     
 =begin
+
+# curl -d "user[first_name]=Foo&user[last_name]=Bar&user[password]=secret&user[password_confirmation]=secret&user[username]=foo&user[email]=foo@bar.com" -X POST localhost:3000/users
+# { first_name:"Foo",last_name:"Bar",email:"foo@bar.com",username:"foo",role:"generic",token:"8e961240e4164e008d60bcddc85b2462", password_digest: "$2a$10$q6mH6Ho2NpQMhuFIOIqqBOWzYMS4d69PLuYHdUzXgiemj/L8zZpfa"}
+
 UserAuthentication.create(user_id: 1, authentication_provider_id: 1, uid: '20350433', token: '20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6', params:
    {"provider"=>"twitter",
     "uid"=>"20350433",

@@ -9,7 +9,9 @@ describe 'OAuth' do
   describe 'OAuth::RequestToken' do
 
     before(:all) do
-      @request = OAuth::RequestToken.new('twitter')
+      User.delete_all
+      @user = User.create({ first_name:"Foo",last_name:"Bar",email:"far@boo.com",username:"foo",role:"generic",token:"8e961240e4164e008d60bcddc85b2462", password_digest: "$2a$10$q6mH6Ho2NpQMhuFIOIqqBOWzYMS4d69PLuYHdUzXgiemj/L8zZpfa"})
+      @request = OAuth::RequestToken.new('twitter', @user.token)
     end
     
     describe '#initialize' do
@@ -25,7 +27,7 @@ describe 'OAuth' do
 
     describe '#url_encode' do
       it 'percent encodes the string' do
-        p @request.url_encode(@request.callback)
+        # p @request.url_encode(@request.callback)
         # expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2Flocalhost%3A9000%2F%23%2Fusers%2Fauth%2Ftwitter%2Fcallback"
       end
     end
@@ -87,7 +89,7 @@ describe 'OAuth' do
 
     describe '#request_data' do
       it 'should send a request' do
-        @token_req = OAuth::RequestToken.new('twitter')
+        @token_req = OAuth::RequestToken.new('twitter', @user.token)
         response = @token_req.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
         p response,response.body
       end
