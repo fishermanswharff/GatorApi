@@ -23,21 +23,16 @@ class Users::OmniauthCallbacksController < ApplicationController
     @request = OAuth::AccessToken.new('twitter',{params: token_params + '&' + oauth_verifier})
     response = @request.request_data(@request.get_header_string,@request.get_base_url, @request.get_method,@request.data)
     
+    # parse the response.body
     # response.body contains 4 parameters:
     # oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6
     # oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur
     # user_id=20350433
     # screen_name=jasonwharff
-
-    # parse the response.body
+    
     # combine user_token, response.body into a new UserAuthentication
-    # 
 
-    # here I need to pass the token and verifier into OAuth::AccessToken.new()
-    # which gets POST'd to the provider's oauth/access_token url, signed just like the request_token POST
-    # which should return something like this in the body:
-    # oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6&oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur&user_id=20350433&screen_name=jasonwharff
-    # at this point, UserAuthentication kicks in and creates from omniauth
+    # redirect front end app to the root
   end
 
   def strip_token(string)
