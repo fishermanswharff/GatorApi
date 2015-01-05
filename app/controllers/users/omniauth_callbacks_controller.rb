@@ -23,14 +23,12 @@ class Users::OmniauthCallbacksController < ApplicationController
     fullpath = request.fullpath
     token_params = strip_token(fullpath)
     oauth_verifier = strip_verifier(fullpath)
-
     user_token = strip_user_token(fullpath)
-    user = User.where(token: user_token)
-    UserAuthentication.create_from_omniauth()
     
     binding.byebug
     
     # here I need to pass the token and verifier into OAuth::AccessToken.new()
+    # which gets POST'd to the provider's oauth/access_token url, signed just like the request_token POST
     # which should return something like this in the body:
     # oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6&oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur&user_id=20350433&screen_name=jasonwharff
     # at this point, UserAuthentication kicks in and creates from omniauth
