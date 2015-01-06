@@ -23,6 +23,8 @@ class Users::OmniauthCallbacksController < ApplicationController
     @request = OAuth::AccessToken.new('twitter',{params: token_params + '&' + oauth_verifier})
     response = @request.request_data(@request.get_header_string,@request.get_base_url, @request.get_method,@request.data)
     
+    redirect_to "http://localhost:9000"
+
     # parse the response.body
     # response.body contains 4 parameters:
     # oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6
@@ -37,6 +39,8 @@ class Users::OmniauthCallbacksController < ApplicationController
     # redirect front end app to the root
   end
 
+  private
+
   def strip_token(string)
     string.scan(/oauth_token=\w+/)[0]
   end
@@ -47,5 +51,21 @@ class Users::OmniauthCallbacksController < ApplicationController
 
   def strip_user_token(string)
     string.scan(/(?:user-token=)(\w+)/)[0][0]
+  end
+
+  def strip_authorized_token(string)
+    string.scan(/(?:oauth_token=)([\w\-]+)/)[0][0]
+  end
+
+  def strip_token_secret(string)
+    string.scan(/(?:oauth_token_secret=)(\w+)/)[0][0]
+  end
+
+  def strip_user_id(string)
+    string.scan(/(?:user_id=)(\d+)/)[0][0]
+  end
+
+  def strip_screen_name(string)
+    string.scan(/(?:screen_name=)(.+)/)[0][0]
   end
 end

@@ -157,6 +157,5 @@ module OAuth
       end
       resp
     end
-
   end
 end
