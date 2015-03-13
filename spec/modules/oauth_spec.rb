@@ -13,7 +13,7 @@ describe 'OAuth' do
       @user = User.create({ first_name:"Foo",last_name:"Bar",email:"far@boo.com",username:"foo",role:"generic",token:"8e961240e4164e008d60bcddc85b2462", password_digest: "$2a$10$q6mH6Ho2NpQMhuFIOIqqBOWzYMS4d69PLuYHdUzXgiemj/L8zZpfa"})
       @request = OAuth::RequestToken.new('twitter', @user.token)
     end
-    
+
     describe '#initialize' do
       it 'returns the provider passed as the parameter' do
         expect(@request.provider).to eq 'twitter'

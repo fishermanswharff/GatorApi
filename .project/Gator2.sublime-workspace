@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"localho",
+				"localhost:9000"
+			],
+			[
+				"delete",
+				"delete_all"
+			],
+			[
+				"omniauth_call",
+				"omniauth_callbacks#twitter_callback"
+			],
+			[
+				"filtered",
+				"filtered_parameters"
+			],
+			[
+				"Req",
+				"RequestToken"
+			],
+			[
+				"get_sign",
+				"get_signing_key"
+			],
+			[
+				"TWITTER",
+				"TWITTER_ACCESS_SECRET"
+			],
+			[
+				"get_sig",
+				"get_signature_base_string"
+			],
+			[
+				"url",
+				"url_encode"
+			],
+			[
+				"TWITTER_C",
+				"TWITTER_CONSUMER_KEY"
+			],
+			[
+				"TWITT",
+				"TWITTER_CONSUMER_SECRET"
+			],
+			[
+				"collc",
+				"collect_parameters"
+			],
+			[
+				"calcu",
+				"calculate_signature"
+			],
+			[
+				"calcul",
+				"calculate_headers"
+			],
+			[
+				"dig",
+				"Digest"
+			],
+			[
+				"T",
+				"TWITTER_ACCESS_TOKEN"
+			],
+			[
 				"User",
 				"UserAuthentication"
 			],
@@ -110,10 +174,6 @@
 			[
 				"time",
 				"timestamps"
-			],
-			[
-				"localho",
-				"localhost:3000"
 			],
 			[
 				"charset",
@@ -454,79 +514,11 @@
 			[
 				"marin",
 				"margin-bottom"
-			],
-			[
-				"marg",
-				"margin-bottom"
-			],
-			[
-				"h",
-				"html"
-			],
-			[
-				"vi",
-				"visibility"
-			],
-			[
-				"c",
-				"captions"
-			],
-			[
-				"backgroud",
-				"background-color"
-			],
-			[
-				"b",
-				"bottom"
-			],
-			[
-				"size",
-				"font-size"
-			],
-			[
-				"inlin",
-				"inline-block"
-			],
-			[
-				"l",
-				"line-height"
-			],
-			[
-				"sty",
-				"stylesheet"
-			],
-			[
-				"req",
-				"require"
-			],
-			[
-				"requ",
-				"requireMain"
-			],
-			[
-				"require",
-				"requireMain"
-			],
-			[
-				"as",
-				"assetAttr"
-			],
-			[
-				"path",
-				"pathList"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
-			"settings":
-			{
-				"buffer_size": 3694,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Gator2 Push Origin",
 	"command_palette":
@@ -624,46 +616,88 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/models",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/modules",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests"
 	],
 	"file_history":
 	[
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.env",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/models/user_spec.rb",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/modules/oauth_spec.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/omniauth_callbacks_spec.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/application.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Gemfile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/environments/development.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/lib/modules/OAuth.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/environment_variables.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/feeds_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/routes.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/views/home/index.html.erb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/feed.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/user.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/home_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202181405_create_authentication_providers.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141203014622_create_user_authentications.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.travis.yml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/routes.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202145408_create_users.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/env.yml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/user_authentication.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/session_store.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/sandbox.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/database.yml.travis",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.rspec",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/seeds.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/db/seeds.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Rakefile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/node_modules/grunt-svgmin/node_modules/svgo/plugins/removeEditorsNSData.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/secret_token.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/raillsapi_codeschool.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/application_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApp/.project/gatorApp.sublime-",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/Gator2.sublime-project",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.sh",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.xml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.gitignore",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/rails_helper.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/spec_helper.rb",
+		"/Users/jason/Desktop/test-auth.html",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/modules/MediaGetter.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/application.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/modules/RssGetter.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/bower_components/angular-sanitize/angular-sanitize.js",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/request_token.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/menu.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/oauth-pry-sessions.sh",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.env",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/testapp/Gemfile",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/testapp/config/initializers/env_variables.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/testapp/config/env.yml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/environment.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/dump.rdb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Gemfile.lock",
+		"/Users/jason/Desktop/.env",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/twitter_variables.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/user.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/authentication_provider.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.git/MERGE_MSG",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/wrap_parameters.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/models/user_spec.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/README.md",
 		"/Users/jason/Documents/JW-Website/Portfolio/jwapi/docs/raillsapi_codeschool.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/twitter_rest.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/users/omniauth_callbacks_controller.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/omniauth_callbacks_spec.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/oauth-pry-sessions.sh",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/oauth-endpoints.rb",
 		"/Users/jason/Documents/JW-Website/Portfolio/jwapi/app/controllers/users_controller.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/user.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/routes.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/serializers/user_serializer.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/seeds.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Gemfile",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.travis.yml",
 		"/Users/jason/Documents/JW-Website/Portfolio/jwapi/config/database.yml.travis",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/database.yml",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/README.md",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202145408_create_users.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/application_controller.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.sh",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.xml",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/Gator2.sublime-project",
-		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.gitignore",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/user_authentication.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/authentication_provider.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/environments/development.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/tweets.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/routes.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/omniauth.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/application_controller.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/tweets_controller.rb",
@@ -705,59 +739,18 @@
 		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/project.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/dashboard.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/models/allocation.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/feeds_controller.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/README.rdoc",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/description",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/HEAD",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/application.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/.git/COMMIT_EDITMSG",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/log/development.log",
 		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/config/application.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/environments/test.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/environments/development.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/environment.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/application.rb",
 		"/Users/jason/Desktop/sort.js",
 		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/config/routes.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/controllers/users_controller.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/controllers/dashboards_controller.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141203014622_create_user_authentications.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/db/seeds.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/views/home/index.html.erb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/user.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/initializers/devise.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/.env",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/user_authentication.rb",
-		"/Users/jason/Documents/UI/moodle/moodle26/lib/dtl/database_exporter.php",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/models/authentication_provider.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202181405_create_authentication_providers.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/migrate/20141020104914_create_user_authentications.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/migrate/20141020104913_create_authentication_providers.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/migrate/20141017200712_devise_create_users.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/db/seeds.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/modules/MediaGetter.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/db/migrate/20141112132959_create_users.rb",
-		"/Users/jason/Desktop/20141202143918_create_users.rb",
-		"/Users/jason/Desktop/Gemfile",
-		"/Users/jason/Desktop/tshirt-instructions.txt",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/.project/build.sh",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/.project/build.xml",
-		"/Users/jason/Documents/WebDevImmersive/Projects/ngsandbox/.project/build.xml",
-		"/Users/jason/Documents/WebDevImmersive/Projects/ngsandbox/.project/ngSandbox.sublime-project",
-		"/Users/jason/Documents/WebDevImmersive/Projects/ngsandbox/.project/build.sh",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/api/README.rdoc",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/Gemfile",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/api/Gemfile",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Blog/Gemfile",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/source.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/spec/main_spec.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week11/notes.txt",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/main.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/example.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/week11/wdi_10_regex_lab/README.md",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Final/lmsAPI/db/migrate/20141201215630_create_users.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Final/lmsAPI/Gemfile",
-		"/Users/jason/Documents/WebDevImmersive/Projects/BobsBagels/api-1/Gemfile"
+		"/Users/jason/Documents/WebDevImmersive/Projects/week9/api/app/controllers/users_controller.rb"
 	],
 	"find":
 	{
@@ -827,6 +820,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"PUBLIC_URL",
+			"&",
+			"nonce",
+			"method",
+			"basestring",
+			"config.api_only",
 			"      \n",
 			"Passthru",
 			"\\s",
@@ -948,16 +947,10 @@
 			"Object",
 			"Object object ",
 			"z-index",
-			";\n",
-			"placeholder",
-			"view-full",
-			"full-view",
-			" 					\n",
-			"Audio",
-			"AudioPlayer"
+			";\n"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": true,
 		"replace_history":
@@ -998,39 +991,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3694,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								443,
-								443
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 14.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1067,7 +1029,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 84.0
+		"height": 91.0
 	},
 	"output.find_results":
 	{
@@ -1207,7 +1169,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 262.0,
+	"side_bar_width": 168.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

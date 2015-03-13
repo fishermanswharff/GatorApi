@@ -1,9 +1,9 @@
 module OAuth
 
   require 'net/http'
-  
+
   class RequestToken
-    
+
     attr_accessor :provider, :consumer_key, :consumer_secret, :base_url, :timestamp, :callback, :params
 
     def initialize(provider,user_token)
@@ -66,7 +66,7 @@ module OAuth
       end
       header.slice(0..-3)
     end
-    
+
     def request_data(header, base_uri, method, post_data=nil)
       url = URI.parse(base_uri)
       http = Net::HTTP.new(url.host, 443) # set to 80 if not using HTTPS
@@ -80,7 +80,7 @@ module OAuth
       resp
     end
   end
-  
+
   class AccessToken
 
     attr_accessor :data

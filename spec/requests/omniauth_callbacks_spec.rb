@@ -8,7 +8,7 @@ describe 'Omniauth Callbacks Controller' do
   before(:each) do
     User.delete_all
     @user = User.create(
-      { 
+      {
         first_name: 'foo',
         last_name: 'bar',
         username: 'foo',

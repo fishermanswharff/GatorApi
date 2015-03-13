@@ -28,7 +28,7 @@ module GatorApi
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    
+
     config.api_only = false
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
     config.autoload_paths << Rails.root.join('lib/modules')

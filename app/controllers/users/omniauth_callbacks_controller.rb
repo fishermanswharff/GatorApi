@@ -14,7 +14,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     token_secret_param = response.body.scan(/oauth_token_secret=\w+/)[0]
     render json: { token: token_param, secret: token_secret_param }, status: 200
   end
-  
+
   def twitter_callback
     fullpath = request.fullpath
     token_params = strip_token(fullpath)
@@ -22,8 +22,10 @@ class Users::OmniauthCallbacksController < ApplicationController
     user_token = strip_user_token(fullpath)
     @request = OAuth::AccessToken.new('twitter',{params: token_params + '&' + oauth_verifier})
     response = @request.request_data(@request.get_header_string,@request.get_base_url, @request.get_method,@request.data)
-    
-    redirect_to "http://localhost:9000"
+
+    binding.byebug
+
+    redirect_to ENV['WEB_APP_URL']
 
     # parse the response.body
     # response.body contains 4 parameters:
@@ -31,7 +33,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     # oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur
     # user_id=20350433
     # screen_name=jasonwharff
-    
+
     # "oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6&oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur&user_id=20350433&screen_name=jasonwharff"
 
     # combine user_token, response.body into a new UserAuthentication
