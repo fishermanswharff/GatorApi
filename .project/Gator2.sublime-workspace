@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Gemfile",
+			"settings":
+			{
+				"buffer_size": 684,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Gator2 Push Origin",
 	"command_palette":
@@ -616,22 +624,29 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/modules",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests"
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator"
 	],
 	"file_history":
 	[
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/routes.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/environments/development.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/application.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/raillsapi_codeschool.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/lib/modules/OAuth.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.xml",
+		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.sh",
 		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/modules/oauth_spec.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/users_spec.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/requests/omniauth_callbacks_spec.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/application.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Gemfile",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/environments/development.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/lib/modules/OAuth.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users/omniauth_callbacks_controller.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/environment_variables.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/app/controllers/feeds_controller.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator/config/routes.rb",
@@ -642,7 +657,6 @@
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202181405_create_authentication_providers.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141203014622_create_user_authentications.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.travis.yml",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/routes.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/db/migrate/20141202145408_create_users.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/env.yml",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/models/user_authentication.rb",
@@ -655,13 +669,10 @@
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Rakefile",
 		"/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox/node_modules/grunt-svgmin/node_modules/svgo/plugins/removeEditorsNSData.js",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/config/initializers/secret_token.rb",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/docs/raillsapi_codeschool.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/users_controller.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/app/controllers/application_controller.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApp/.project/gatorApp.sublime-",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/Gator2.sublime-project",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.sh",
-		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project/build.xml",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.gitignore",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/rails_helper.rb",
 		"/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/spec/spec_helper.rb",
@@ -991,8 +1002,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/Gemfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 684,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								365,
+								365
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1029,7 +1071,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 91.0
+		"height": 145.0
 	},
 	"output.find_results":
 	{
@@ -1169,7 +1211,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 168.0,
+	"side_bar_width": 167.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

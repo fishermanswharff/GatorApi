@@ -4,14 +4,14 @@ module OAuth
 
   class RequestToken
 
-    attr_accessor :provider, :consumer_key, :consumer_secret, :base_url, :timestamp, :callback, :params
+    attr_accessor :provider, :consumer_key, :consumer_secret, :base_url, :timestamp, :callback, :params, :nonce
 
     def initialize(provider,user_token)
       @provider = provider
       @consumer_key = ENV['TWITTER_CONSUMER_KEY']
       @consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
       @timestamp = Time.now.utc.to_i.to_s
-      @callback = 'http://localhost:3000/users/auth/twitter/callback?user-token=' + "#{user_token}"
+      @callback = 'http://localhost:3000/users/auth/twitter/callback?user-token=' + "#{user_token}&provider=#{@provider}"
       @params = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
@@ -31,7 +31,7 @@ module OAuth
     end
 
     def get_nonce
-      SecureRandom.uuid.gsub(/\-|\n|\r/,'')
+      @nonce = SecureRandom.uuid.gsub(/\-|\n|\r/,'')
     end
 
     def get_base_url
@@ -48,6 +48,7 @@ module OAuth
 
     def get_signature_base_string
       get_method + "&" + url_encode(get_base_url) + "&" + url_encode(collect_parameters)
+      # "POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&"
     end
 
     def get_signing_key

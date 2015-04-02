@@ -4,7 +4,14 @@ class Users::OmniauthCallbacksController < ApplicationController
   def passthru
     @user_token = request.headers['HTTP_AUTHORIZATION'].gsub(/Token token=/,'')
     @provider = request.filtered_parameters['provider']
-    request_token(@provider, @user_token)
+
+    user = User.where(token: @user_token)
+    authentications = UserAuthentication.where(user: user).map { |i| i if i.authentication_provider.name == @provider }
+    if authentications.length > 0
+      # need to send an authorization request to Twitter with the saved authentication
+    else
+      request_token(@provider, @user_token)
+    end
   end
 
   def request_token(provider, user_token)
@@ -22,26 +29,20 @@ class Users::OmniauthCallbacksController < ApplicationController
     user_token = strip_user_token(fullpath)
     @request = OAuth::AccessToken.new('twitter',{params: token_params + '&' + oauth_verifier})
     response = @request.request_data(@request.get_header_string,@request.get_base_url, @request.get_method,@request.data)
-
-    binding.byebug
-
+    @user = User.find_by(token: params['user-token'])
+    hash = convertToHash(response.body)
+    UserAuthentication.create_from_omniauth(hash, @user, params["provider"])
     redirect_to ENV['WEB_APP_URL']
-
-    # parse the response.body
-    # response.body contains 4 parameters:
-    # oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6
-    # oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur
-    # user_id=20350433
-    # screen_name=jasonwharff
-
-    # "oauth_token=20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6&oauth_token_secret=HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur&user_id=20350433&screen_name=jasonwharff"
-
-    # combine user_token, response.body into a new UserAuthentication
-
-    # redirect front end app to the root
   end
 
   private
+
+  def convertToHash(string)
+    string.split('&').each_with_object({}) { |i,o|
+      array = i.split('=')
+      o[array[0]] = array[1]
+    }
+  end
 
   def strip_token(string)
     string.scan(/oauth_token=\w+/)[0]

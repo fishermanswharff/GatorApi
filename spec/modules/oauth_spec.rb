@@ -4,9 +4,9 @@ require 'net/http'
 require 'uri'
 require File.join(Rails.root, "lib/modules/OAuth.rb")
 
-describe 'OAuth' do
+describe OAuth do
 
-  describe 'OAuth::RequestToken' do
+  describe OAuth::RequestToken do
 
     before(:all) do
       User.delete_all
@@ -21,25 +21,19 @@ describe 'OAuth' do
       it 'sets the values needed' do
         expect(@request.consumer_key).to eq ENV['TWITTER_CONSUMER_KEY']
         expect(@request.consumer_secret).to eq ENV['TWITTER_CONSUMER_SECRET']
-        # expect(@request.callback).to eq "http://localhost:9000/#/users/auth/twitter/callback"
+        expect(@request.callback).to eq "http://localhost:3000/users/auth/twitter/callback?user-token=8e961240e4164e008d60bcddc85b2462&provider=twitter"
       end
     end
 
     describe '#url_encode' do
       it 'percent encodes the string' do
-        # p @request.url_encode(@request.callback)
-        # expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2Flocalhost%3A9000%2F%23%2Fusers%2Fauth%2Ftwitter%2Fcallback"
+        expect(@request.url_encode(@request.callback)).to eq "http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Ftwitter%2Fcallback%3Fuser-token%3D8e961240e4164e008d60bcddc85b2462%26provider%3Dtwitter"
       end
     end
 
     describe '#get_method' do
       it 'returns the http request method' do
         expect(@request.get_method).to eq 'POST'
-      end
-    end
-
-    describe '#get_nonce' do
-      it 'returns a unique string that is only used once' do
       end
     end
 
@@ -52,6 +46,9 @@ describe 'OAuth' do
     describe '#params' do
       it 'returns a hash of params' do
         expect(@request.params.class).to eq Hash
+        expect(@request.params[:oauth_callback]).to eq "http://localhost:3000/users/auth/twitter/callback?user-token=8e961240e4164e008d60bcddc85b2462&provider=twitter"
+        expect(@request.params[:oauth_consumer_key]).to eq ENV['TWITTER_CONSUMER_KEY']
+        expect(@request.params[:oauth_timestamp]).to eq @request.timestamp
       end
     end
 
@@ -79,6 +76,7 @@ describe 'OAuth' do
 
     describe '#calculate_signature' do
       it 'should encrypt the signature base string with the signing key' do
+        # expect(@request.calculate_signature).to eq
       end
     end
 
@@ -91,7 +89,13 @@ describe 'OAuth' do
       it 'should send a request' do
         @token_req = OAuth::RequestToken.new('twitter', @user.token)
         response = @token_req.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
-        p response,response.body
+        expect(response.code).to eq '200'
+        expect(response.class).to eq Net::HTTPOK
+        body = response.body.split('&').each_with_object({}) { |i,o| o[i.split('=')[0]] = i.split('=')[1] }
+        expect(body['oauth_token'].class).to eq String
+        expect(body['oauth_token_secret'].class).to eq String
+        expect(body['oauth_callback_confirmed']).to eq 'true'
+        # p response,response.body
       end
     end
   end
