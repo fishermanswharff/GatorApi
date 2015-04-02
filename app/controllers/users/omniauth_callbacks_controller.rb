@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < ApplicationController
 
     user = User.where(token: @user_token)
     authentications = UserAuthentication.where(user: user).map { |i| i if i.authentication_provider.name == @provider }
-    if authentications.length > 0
+    if authentications[0]
       # need to send an authorization request to Twitter with the saved authentication
     else
       request_token(@provider, @user_token)

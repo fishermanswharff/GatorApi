@@ -95,7 +95,7 @@ describe OAuth do
         expect(body['oauth_token'].class).to eq String
         expect(body['oauth_token_secret'].class).to eq String
         expect(body['oauth_callback_confirmed']).to eq 'true'
-        # p response,response.body
+        p response,response.body
       end
     end
   end
