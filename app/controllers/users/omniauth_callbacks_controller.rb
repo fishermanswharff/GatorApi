@@ -6,7 +6,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     @provider = request.filtered_parameters['provider']
     user = User.where(token: @user_token)
     authentications = UserAuthentication.where(user: user).map { |i| i if i.authentication_provider.name == @provider }
-    if authentications[0]
+    if authentications.length > 0
       # need to send an authorization request to Twitter with the saved authentication
     else
       request_token(@provider, @user_token)
@@ -15,7 +15,7 @@ class Users::OmniauthCallbacksController < ApplicationController
 
   def request_token(provider, user_token)
     @request = OAuth::RequestToken.new(provider,user_token)
-    response = @request.request_data(@request.get_header_string,@request.get_base_url,@request.get_method)
+    response = @request.request_data(OAuth::get_header_string('request_token',@request.params),OAuth::get_base_url('request_token'),OAuth::get_method)
     token_param = strip_token(response.body)
     token_secret_param = response.body.scan(/oauth_token_secret=\w+/)[0]
     render json: { token: token_param, secret: token_secret_param }, status: 200
@@ -27,7 +27,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     oauth_verifier = strip_verifier(fullpath)
     user_token = strip_user_token(fullpath)
     @request = OAuth::AccessToken.new('twitter',{params: token_params + '&' + oauth_verifier})
-    response = @request.request_data(@request.get_header_string,@request.get_base_url, @request.get_method,@request.data)
+    response = @request.request_data(@request.get_header_string,OAuth::get_base_url('access_token'), OAuth::get_method,@request.data)
     @user = User.find_by(token: params['user-token'])
     hash = convertToHash(response.body)
     UserAuthentication.create_from_omniauth(hash, @user, params["provider"])
