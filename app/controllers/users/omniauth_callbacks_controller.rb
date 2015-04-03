@@ -4,7 +4,6 @@ class Users::OmniauthCallbacksController < ApplicationController
   def passthru
     @user_token = request.headers['HTTP_AUTHORIZATION'].gsub(/Token token=/,'')
     @provider = request.filtered_parameters['provider']
-
     user = User.where(token: @user_token)
     authentications = UserAuthentication.where(user: user).map { |i| i if i.authentication_provider.name == @provider }
     if authentications[0]

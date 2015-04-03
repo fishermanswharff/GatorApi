@@ -48,7 +48,6 @@ module OAuth
 
     def get_signature_base_string
       get_method + "&" + url_encode(get_base_url) + "&" + url_encode(collect_parameters)
-      # "POST&https%3A%2F%2Fapi.twitter.com%2Foauth%2Frequest_token&"
     end
 
     def get_signing_key
