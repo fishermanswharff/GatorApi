@@ -1,5 +1,5 @@
 {
-  "build_systems": 
+  "build_systems":
   [
     {
       "cmd":
@@ -27,12 +27,12 @@
     },
     {
       "name": "REFERENCE: Staffing API for Angular Week",
-      "path": "/Users/jason/Documents/WebDevImmersive/Projects/week9/api", 
+      "path": "/Users/jason/Documents/WebDevImmersive/Projects/week9/api",
       "file_exclude_patterns": [".gitingore"]
     },
     {
       "name": "REFERENCE: ngSandbox",
-      "path": "/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox", 
+      "path": "/Users/jason/Documents/WebDevImmersive/Projects/ngSandbox",
       "file_exclude_patterns": [".gitingore"]
     }
   ]

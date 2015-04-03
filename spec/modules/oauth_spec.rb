@@ -104,12 +104,6 @@ describe OAuth do
       it 'sets the provider passed as the parameter' do
         expect(@request.provider).to eq 'twitter'
       end
-      it 'sets the consumer key' do
-        expect(@request.consumer_key).to eq ENV['TWITTER_CONSUMER_KEY']
-      end
-      it 'sets the consumer secret' do
-        expect(@request.consumer_secret).to eq ENV['TWITTER_CONSUMER_SECRET']
-      end
       it 'sets the callback url with the provider and token passed in' do
         expect(@request.callback).to eq "http://localhost:3000/users/auth/twitter/callback?user-token=8e961240e4164e008d60bcddc85b2462&provider=twitter"
       end
@@ -141,6 +135,15 @@ describe OAuth do
         expect(body['oauth_token_secret'].class).to eq String
         expect(body['oauth_callback_confirmed']).to eq 'true'
       end
+    end
+  end
+
+  describe OAuth::AccessToken do
+
+    before(:all) do
+      User.delete_all
+      @user = User.create({ first_name:"Foo",last_name:"Bar",email:"far@boo.com",username:"foo",role:"generic",token:"8e961240e4164e008d60bcddc85b2462", password_digest: "$2a$10$q6mH6Ho2NpQMhuFIOIqqBOWzYMS4d69PLuYHdUzXgiemj/L8zZpfa"})
+      @request = OAuth::RequestToken.new('twitter', @user.token)
     end
   end
 end

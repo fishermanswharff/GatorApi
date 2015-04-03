@@ -2,12 +2,10 @@ module OAuth
   require 'net/http'
 
   class RequestToken
-    attr_accessor :provider, :consumer_key, :consumer_secret, :base_url, :timestamp, :callback, :params
+    attr_accessor :provider, :timestamp, :callback, :params
 
     def initialize(provider,user_token)
       @provider = provider
-      @consumer_key = ENV['TWITTER_CONSUMER_KEY']
-      @consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
       @timestamp = Time.now.utc.to_i.to_s
       @callback = 'http://localhost:3000/users/auth/twitter/callback?user-token=' + "#{user_token}&provider=#{@provider}"
       @params = {
