@@ -133,14 +133,13 @@ describe OAuth do
     describe '#request_data' do
       it 'should send a request' do
         @token_req = OAuth::RequestToken.new('twitter', @user.token)
-        # response = @token_req.request_data(@request.get_header_string,OAuth::get_base_url('request_token'),OAuth::get_method)
-        # these tests fail on the Travis CI testing server
-        # expect(response.code).to eq '200'
-        # expect(response.class).to eq Net::HTTPOK
-        # body = response.body.split('&').each_with_object({}) { |i,o| o[i.split('=')[0]] = i.split('=')[1] }
-        # expect(body['oauth_token'].class).to eq String
-        # expect(body['oauth_token_secret'].class).to eq String
-        # expect(body['oauth_callback_confirmed']).to eq 'true'
+        response = @token_req.request_data(OAuth::get_header_string('request_token', @token_req.params),OAuth::get_base_url('request_token'),OAuth::get_method)
+        expect(response.code).to eq '200'
+        expect(response.class).to eq Net::HTTPOK
+        body = response.body.split('&').each_with_object({}) { |i,o| o[i.split('=')[0]] = i.split('=')[1] }
+        expect(body['oauth_token'].class).to eq String
+        expect(body['oauth_token_secret'].class).to eq String
+        expect(body['oauth_callback_confirmed']).to eq 'true'
       end
     end
   end
