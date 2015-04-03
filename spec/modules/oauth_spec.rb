@@ -95,7 +95,7 @@ describe OAuth do
   describe OAuth::RequestToken do
 
     before(:all) do
-      User.delete_all
+      User.destroy_all
       @user = User.create({ first_name:"Foo",last_name:"Bar",email:"far@boo.com",username:"foo",role:"generic",token:"8e961240e4164e008d60bcddc85b2462", password_digest: "$2a$10$q6mH6Ho2NpQMhuFIOIqqBOWzYMS4d69PLuYHdUzXgiemj/L8zZpfa"})
       @request = OAuth::RequestToken.new('twitter', @user.token)
     end
@@ -141,10 +141,11 @@ describe OAuth do
   describe OAuth::AccessToken do
 
     before(:all) do
-      User.delete_all
+      User.destroy_all
       @user = User.create({ first_name:"Foo",last_name:"Bar",email:"far@boo.com",username:"foo",role:"generic",token:"8e961240e4164e008d60bcddc85b2462", password_digest: "$2a$10$q6mH6Ho2NpQMhuFIOIqqBOWzYMS4d69PLuYHdUzXgiemj/L8zZpfa"})
-      @request = OAuth::RequestToken.new('twitter', @user.token)
+      @request = OAuth::AccessToken.new('twitter', "oauth_token=vXRrcMnxtT52Pf0suKaHsW67I8V0tV03&oauth_verifier=cBaabHkbVCwMlpUbrIYJ1XT7sHPUxXSi")
     end
+
   end
 end
 
