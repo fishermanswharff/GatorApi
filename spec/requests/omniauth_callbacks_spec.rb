@@ -29,7 +29,7 @@ describe 'Omniauth Callbacks Controller' do
       expect(response.status).to eq 200
       params = json(response.body)
       expect(params.length).to eq 2
-      p params
+      p response, params
     end
   end
 end
