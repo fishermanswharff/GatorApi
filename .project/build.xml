@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="Gator2 Push Origin" basedir="." default="push">
-  <target name="push"> 
-    <exec dir="/Users/jason/Documents/WebDevImmersive/Projects/Gator2/gatorApi/.project" vmlauncher="false" executable="/bin/bash">
-      <arg line="./build.sh"/>
-    </exec>
-  </target> 
-</project>
