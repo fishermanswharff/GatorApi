@@ -5,7 +5,7 @@ describe 'User API Endpoint' do
   before(:each) do
     User.delete_all
     @user = User.create(
-      { 
+      {
         first_name: 'foo',
         last_name: 'bar',
         username: 'foo',
@@ -91,18 +91,18 @@ describe 'User API Endpoint' do
   end
 
   describe '#create' do
-    
+
     before(:each) do
       post '/users',
       { user:
         { first_name: 'far', last_name: 'boo', username: 'farboo', role: 'generic', email: 'foz@baz.com', password: 'secret'}
       }.to_json, {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
     end
-    
+
     it 'creates a new user' do
       expect(response.status).to eq 201
     end
-    
+
     it 'returns the location of the user' do
       user = json(response.body)
       expect(user_url(user[:id])).to eq response.location
@@ -120,13 +120,13 @@ describe 'User API Endpoint' do
   describe '#update' do
     before(:each) do
       patch "/users/#{@user.id}",
-      { user: 
+      { user:
         { first_name: 'jason', last_name: 'wharff', role: 'admin', password: 'secret' }
       }.to_json,
       { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
       @user_response = json(response.body)
     end
-    
+
     it 'responds with success' do
       expect(response.status).to eq 200
     end
