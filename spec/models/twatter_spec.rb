@@ -31,4 +31,11 @@ RSpec.describe Twatter, type: :model do
     end
   end
 
+  describe 'twitter' do
+
+    it 'returns a twitter client' do
+      jason_twitter.client = Twatter.twitter(jason_twitter.auth.params['oauth_token'], jason_twitter.auth.params['oauth_token_secret'])
+      expect(jason_twitter.client.class).to eq Twitter::REST::Client
+    end
+  end
 end

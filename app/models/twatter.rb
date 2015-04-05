@@ -8,6 +8,9 @@ class Twatter
     token = @auth.params["oauth_token"]
     secret = @auth.params["oauth_token_secret"]
     screen_name = @auth.params["screen_name"]
+  end
+
+  def self.twitter(token,secret)
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
       config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
