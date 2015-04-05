@@ -22,7 +22,7 @@ describe 'User API Endpoint' do
     end
 
     it 'has valid authentication with token' do
-      expect(response.status).to eq 200
+      expect(response.status).to eq 202
     end
 
     it 'responds with valid JSON' do
@@ -35,8 +35,8 @@ describe 'User API Endpoint' do
     end
 
     it 'expects a token in the response' do
-      token = json(response.body)
-      expect(token).to_not be_nil
+      user = json(response.body)
+      expect(user).to_not be_nil
     end
 
     it 'responds 401 if unauthorized' do
