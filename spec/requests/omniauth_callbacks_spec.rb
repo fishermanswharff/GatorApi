@@ -72,6 +72,7 @@ describe 'Omniauth Callbacks Controller' do
         expect(response.status).to be 203
         hash = JSON.parse(response.body)
         expect(hash['message']).to eq 'You are logged in'
+        expect(hash['screenname']).to eq 'jasonwharff'
       end
     end
   end
