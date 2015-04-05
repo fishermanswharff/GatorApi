@@ -143,6 +143,12 @@ describe OAuth do
       @request = OAuth::AccessToken.new('twitter', "oauth_token=vXRrcMnxtT52Pf0suKaHsW67I8V0tV03&oauth_verifier=cBaabHkbVCwMlpUbrIYJ1XT7sHPUxXSi")
     end
 
+    describe '#initialize' do
+      it 'sets the provider passed as the parameter' do
+        # write expectations
+      end
+    end
+
   end
 end
 

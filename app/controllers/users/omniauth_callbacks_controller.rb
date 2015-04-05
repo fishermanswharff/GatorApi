@@ -7,7 +7,8 @@ class Users::OmniauthCallbacksController < ApplicationController
     user = User.where(token: @user_token)
     authentications = UserAuthentication.where(user: user).map { |i| i if i.authentication_provider.name == @provider }
     if authentications.length > 0
-      # need to send an authorization request to Twitter with the saved authentication
+      screen_name = authentications[0].params['screen_name']
+      render json: { message: 'You are logged in', screenname: screen_name }, status: 203
     else
       request_token(@provider, @user_token)
     end
@@ -18,7 +19,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     response = @request.request_data(OAuth::get_header_string('request_token',@request.params),OAuth::get_base_url('request_token'),OAuth::get_method)
     token_param = strip_token(response.body)
     token_secret_param = response.body.scan(/oauth_token_secret=\w+/)[0]
-    render json: { token: token_param, secret: token_secret_param }, status: 200
+    render json: { token: token_param, secret: token_secret_param }, status: 202
   end
 
   def twitter_callback
@@ -27,7 +28,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     oauth_verifier = strip_verifier(fullpath)
     user_token = strip_user_token(fullpath)
     @request = OAuth::AccessToken.new('twitter',{ params: token_params + '&' + oauth_verifier })
-    response = @request.request_data(@request.get_header_string,OAuth::get_base_url('access_token'), OAuth::get_method,@request.data)
+    response = @request.request_data(OAuth::get_header_string('access_token',@request.params),OAuth::get_base_url('access_token'), OAuth::get_method,@request.data)
     @user = User.find_by(token: params['user-token'])
     hash = convertToHash(response.body)
     UserAuthentication.create_from_omniauth(hash, @user, params["provider"])

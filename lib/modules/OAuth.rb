@@ -33,7 +33,7 @@ module OAuth
   end
 
   class AccessToken
-    attr_accessor :data
+    attr_accessor :data, :params
 
     def initialize(provider,data)
       @provider = provider
