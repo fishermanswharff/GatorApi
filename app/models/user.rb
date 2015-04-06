@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   before_create :set_token
   # validates :username, :password, presence: true
   # has_many :feeds
+
   enum role: [:admin,:generic]
   has_secure_password
 
