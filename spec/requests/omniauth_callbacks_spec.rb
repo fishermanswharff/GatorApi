@@ -40,7 +40,7 @@ describe 'Omniauth Callbacks Controller' do
       it 'receives the twitter callback and parses the params out of the fullpath' do
         post '/users/auth/twitter/callback?user-token=7a2ab5a8677b446eb1c269c5056a001d&provider=twitter&oauth_token=vXRrcMnxtT52Pf0suKaHsW67I8V0tV03&oauth_verifier=cBaabHkbVCwMlpUbrIYJ1XT7sHPUxXSi'
         expect(response.status).to be 302
-        expect(response.body).to eq "<html><body>You are being <a href=\"http://localhost:9000\">redirected</a>.</body></html>"
+        expect(response.body).to eq "<html><body>You are being <a href=\"http://localhost:9000/social\">redirected</a>.</body></html>"
       end
     end
   end
