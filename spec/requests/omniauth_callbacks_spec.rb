@@ -74,6 +74,7 @@ describe 'Omniauth Callbacks Controller' do
         expect(hash['message']).to eq 'You are logged in'
         expect(hash['screenname']).to eq 'jasonwharff'
         expect(hash['user_id']).to eq '20350433'
+        expect(hash['provider']).to eq 'twitter'
       end
     end
   end

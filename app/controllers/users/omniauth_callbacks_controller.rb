@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     user = User.where(token: @user_token)
     authentications = UserAuthentication.where(user: user).map { |i| i if i.authentication_provider.name == @provider }
     if authentications.length > 0
-      render json: { message: 'You are logged in', screenname: authentications[0].params['screen_name'], user_id: authentications[0].params['user_id']  }, status: 203
+      render json: { message: 'You are logged in', screenname: authentications[0].params['screen_name'], user_id: authentications[0].params['user_id'], provider: @provider  }, status: 203
     else
       request_token(@provider, @user_token)
     end
