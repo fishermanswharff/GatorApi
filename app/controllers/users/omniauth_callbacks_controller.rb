@@ -7,8 +7,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     user = User.where(token: @user_token)
     authentications = UserAuthentication.where(user: user).map { |i| i if i.authentication_provider.name == @provider }
     if authentications.length > 0
-      screen_name = authentications[0].params['screen_name']
-      render json: { message: 'You are logged in', screenname: screen_name }, status: 203
+      render json: { message: 'You are logged in', screenname: authentications[0].params['screen_name'], user_id: authentications[0].params['user_id']  }, status: 203
     else
       request_token(@provider, @user_token)
     end
@@ -32,7 +31,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     @user = User.find_by(token: params['user-token'])
     hash = convertToHash(response.body)
     UserAuthentication.create_from_omniauth(hash, @user, params["provider"])
-    redirect_to ENV['WEB_APP_URL']
+    redirect_to ENV['WEB_APP_URL'] + "?provider=#{params["provider"]}&screenname=#{hash['screen_name']}&user-id=#{hash['user_id']}"
   end
 
   private

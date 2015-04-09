@@ -38,9 +38,9 @@ describe 'Omniauth Callbacks Controller' do
 
     describe '#twitter_callback' do
       it 'receives the twitter callback and parses the params out of the fullpath' do
-        post '/users/auth/twitter/callback?user-token=7a2ab5a8677b446eb1c269c5056a001d&provider=twitter&oauth_token=vXRrcMnxtT52Pf0suKaHsW67I8V0tV03&oauth_verifier=cBaabHkbVCwMlpUbrIYJ1XT7sHPUxXSi'
+        post '/users/auth/twitter/callback?user-token=7a2ab5a8677b446eb1c269c5056a001d&provider=twitter&oauth_token=DokqxLiI0WySCVECDTHO2OT7EBv1xwk1&oauth_verifier=dPc4RODcgEGSL8appKuwc8GJXkPkjppK'
         expect(response.status).to be 302
-        expect(response.body).to eq "<html><body>You are being <a href=\"http://localhost:9000/social\">redirected</a>.</body></html>"
+        expect(response.body).to eq "<html><body>You are being <a href=\"http://localhost:9000/#/social?provider=twitter&amp;screenname=jasonwharff&amp;user-id=20350433\">redirected</a>.</body></html>"
       end
     end
   end
@@ -63,7 +63,7 @@ describe 'Omniauth Callbacks Controller' do
       )
       post '/login',{ username: "foo", password: "secret" }
       AuthenticationProvider.create(name: 'twitter')
-      UserAuthentication.create_from_omniauth({"oauth_token"=>"20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6", "oauth_token_secret"=>"HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur", "user_id"=>"20350433", "screen_name"=>"jasonwharff"}, @user, 'twitter')
+      UserAuthentication.create_from_omniauth({"oauth_token"=>"#{ENV['TWITTER_ACCESS_TOKEN']}", "oauth_token_secret"=>"#{ENV['TWITTER_ACCESS_SECRET']}", "user_id"=>"20350433", "screen_name"=>"jasonwharff"}, @user, 'twitter')
     end
 
     describe '#passthru' do
@@ -73,6 +73,7 @@ describe 'Omniauth Callbacks Controller' do
         hash = JSON.parse(response.body)
         expect(hash['message']).to eq 'You are logged in'
         expect(hash['screenname']).to eq 'jasonwharff'
+        expect(hash['user_id']).to eq '20350433'
       end
     end
   end
