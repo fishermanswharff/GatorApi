@@ -5,7 +5,7 @@ env:
   matrix:
   - DB=postgresql
   global:
-  - WEB_APP_URL: http://localhost:9000/social
+  - WEB_APP_URL: 'http://localhost:9000/#/social'
   - secure: FT+jBK9RINVbBr9IZs71AV8hterXE6ANSvoU5sDvxwXdfaGOaaYnbVR4hdV4oLE2kQG+byqpLwsKshIg8CygQcSaAUVn8Gp7qeMtCCP9d8uGnRqSJMHcndyoBWPhz/bfLsDEmZSaE6HXLekxU35eQJRUQGp6Ztoji/g/8itLTyo=
   - secure: ZsZ8wkKJ68/l2C0AJcR8p6NYhs2un7mXUU45RTEbmK/68qICficSdpVJKVvyh/nhvYFDtwurOWSsS0EjFZ7kIgnio0kyBx3GddDZqrWsuGVQVIv+md7SdcGiH/zKvlY/WhRuO958e0A0abBiLJo8OmDhpvE9BrhkvNTYB1F3zm8=
   - secure: gwyCZo/UYLWSPMI051RatTemRc0JV0PtdY0VHDY92K6+pbMDosxdZsvo3Gh4+S8TEvWCEYvH3s2kFe1OSxBSEFrVEtRjmI6bLDCAGCmLaQUFy/gBg+F34NiPUVLVvEIVjH/CwLd5i+nWxuHgRqxdeA7OpB1uDC5rabv7wTCATVk=
