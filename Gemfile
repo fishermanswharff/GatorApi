@@ -15,6 +15,11 @@ gem 'bcrypt'
 gem 'arel', '6.0.0.beta2'
 gem 'redis-rails'
 gem 'newrelic_rpm'
+gem 'rack-cache'
+
+group :development do
+  gem 'annotate'
+end
 
 group :development, :test do
   gem 'pry-byebug'
