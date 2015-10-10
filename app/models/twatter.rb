@@ -15,4 +15,10 @@ class Twatter
       config.access_token_secret = secret
     end
   end
+
+  def get_tweets
+    Rails.cache.fetch([:user_tweets, self], expires_in: 15.minutes) do
+      self.client.home_timeline
+    end
+  end
 end
