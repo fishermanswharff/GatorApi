@@ -14,5 +14,6 @@
 .env
 config/env.yml
 docs/
+notes/
 .DS_Store
 dump.rdb
