@@ -13,6 +13,5 @@
 .project
 .env
 config/env.yml
-docs/oauth-pry-sessions.sh
-docs/oauth-pry-sessions.txt
-docs/sandbox.rb
+docs/
+.DS_Store
