@@ -5,9 +5,7 @@ class TweetsController < ApplicationController
   def index
     user = authenticate
     twitter = Twatter.new(user)
-    Rails.cache.fetch([:user_tweets,self], expires_in: 5.minutes) do
-      tweets = twitter.client.home_timeline
-      render json: tweets.to_json
-    end
+    tweets = twitter.get_tweets
+    render json: tweets.to_json
   end
 end
