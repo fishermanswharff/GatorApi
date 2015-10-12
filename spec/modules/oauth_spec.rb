@@ -152,10 +152,3 @@ describe OAuth do
   end
 end
 
-
-
-
-
-
-
-
