@@ -17,3 +17,4 @@ docs/
 notes/
 .DS_Store
 dump.rdb
+config/redis.conf
