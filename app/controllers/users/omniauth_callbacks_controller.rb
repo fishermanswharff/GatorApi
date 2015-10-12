@@ -26,9 +26,9 @@ class Users::OmniauthCallbacksController < ApplicationController
     @request = OAuth::AccessToken.new('twitter',{ params: strip_token(fullpath) + '&' + strip_verifier(fullpath) })
     response = @request.request_data(OAuth::get_header_string('access_token',@request.params),OAuth::get_base_url('access_token'), OAuth::get_method,@request.data)
     @user = User.find_by(token: params['user-token'])
-    hash = convertToHash(response.body)
-    UserAuthentication.create_from_omniauth(hash, @user, params["provider"])
-    redirect_to ENV['WEB_APP_URL'] + "?provider=#{params["provider"]}&screenname=#{hash['screen_name']}&user-id=#{hash['user_id']}"
+    obj = convertToHash(response.body)
+    UserAuthentication.create_from_omniauth(obj, @user, params["provider"])
+    redirect_to ENV['WEB_APP_URL'] + "?provider=#{params["provider"]}&screenname=#{obj['screen_name']}&user-id=#{obj['user_id']}"
   end
 
   private
