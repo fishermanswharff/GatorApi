@@ -18,9 +18,6 @@ RSpec.describe Feed, type: :model do
   let(:feed) { FactoryGirl.create(:feed) }
   let(:bad_feed) { FactoryGirl.create(:feed, :improper_url) }
 
-  before :each do
-  end
-
   it 'is an instance of a feed' do
     expect(feed).to be_a Feed
   end
