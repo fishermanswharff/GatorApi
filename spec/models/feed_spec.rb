@@ -15,13 +15,14 @@ require 'rails_helper'
 
 RSpec.describe Feed, type: :model do
 
+  let(:feed) { FactoryGirl.create(:feed) }
+  let(:bad_feed) { FactoryGirl.create(:feed, :improper_url) }
+
   before :each do
-    # @user = FactoryGirl.create(:user)
-    @good_feed = FactoryGirl.create(:feed)
-    # @bad_feed = FactoryGirl.create(:feed, :improper_url)
   end
 
   it 'is an instance of a feed' do
-    expect(@good_feed).to be_a Feed
+    expect(feed).to be_a Feed
   end
+
 end
