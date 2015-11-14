@@ -14,6 +14,7 @@ gem 'twitter'
 gem 'bcrypt'
 gem 'arel' #, '6.0.0.beta2'
 gem 'redis-rails'
+gem 'redis-rack-cache'
 gem 'newrelic_rpm'
 gem 'rack-cache'
 

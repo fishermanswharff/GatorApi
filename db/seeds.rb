@@ -4,8 +4,8 @@ ActiveRecord::Base.connection.tables.each do |table|
   ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
 end
 
-users = User.create([
-  { 
+users = User.create!([
+  {
     first_name: 'Jason',
     last_name: 'Wharff',
     username: 'jasonwharff',
@@ -26,7 +26,9 @@ users = User.create([
 ])
 
 AuthenticationProvider.create(name: 'twitter')
-    
+AuthenticationProvider.create(name: 'instagram')
+AuthenticationProvider.create(name: 'linkedin')
+
 =begin
 
 # curl -d "user[first_name]=Foo&user[last_name]=Bar&user[password]=secret&user[password_confirmation]=secret&user[username]=foo&user[email]=foo@bar.com" -X POST localhost:3000/users
