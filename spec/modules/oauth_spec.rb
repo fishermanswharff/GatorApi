@@ -121,6 +121,7 @@ describe OAuth do
       end
     end
 
+    # TODO: stub out this request/response
     describe '#request_data' do
       it 'should send a request' do
         @token_req = OAuth::RequestToken.new('twitter', @user.token)

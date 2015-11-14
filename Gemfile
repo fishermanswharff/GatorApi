@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.2.0"
-gem 'rails', '4.2.0.beta2'
+gem 'rails', '4.2.4'
 gem 'rails-api'
 gem 'unicorn'
 gem 'pg'
@@ -12,18 +12,22 @@ gem 'twitter'
 # gem 'linkedin'
 # gem 'instagram'
 gem 'bcrypt'
-gem 'arel', '6.0.0.beta2'
+gem 'arel' #, '6.0.0.beta2'
 gem 'redis-rails'
 gem 'newrelic_rpm'
 gem 'rack-cache'
 
 group :development do
   gem 'annotate'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development, :test do
-  gem 'pry-byebug'
-  gem 'pry-rails'
   gem 'web-console', '~> 2.0.0.beta4'
   gem 'spring'
   gem 'bullet'

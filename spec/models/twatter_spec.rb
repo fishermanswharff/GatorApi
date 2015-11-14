@@ -34,6 +34,7 @@ RSpec.describe Twatter, type: :model do
     end
   end
 
+  # TODO: stub out response to we're not pinging twitter
   describe '#get_tweets' do
     it 'gets the home timeline for the user' do
       expect(jason_twitter.get_tweets).to_not be nil

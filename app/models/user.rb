@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   has_many :user_authentications, dependent: :destroy
   before_create :set_token
   # validates :username, :password, presence: true
-  # has_many :feeds
+  has_many :feeds
 
   enum role: [:admin,:generic]
   has_secure_password

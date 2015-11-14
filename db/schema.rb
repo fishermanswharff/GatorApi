@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203014622) do
+ActiveRecord::Schema.define(version: 20151012232232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authentication_providers", force: true do |t|
+  create_table "authentication_providers", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +24,20 @@ ActiveRecord::Schema.define(version: 20141203014622) do
 
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
 
-  create_table "user_authentications", force: true do |t|
+  create_table "feeds", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.string   "url",         null: false
+    t.text     "description", null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feeds", ["title"], name: "index_feeds_on_title", using: :btree
+  add_index "feeds", ["url"], name: "index_feeds_on_url", using: :btree
+  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id", using: :btree
+
+  create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "authentication_provider_id"
     t.string   "uid"
@@ -38,7 +51,7 @@ ActiveRecord::Schema.define(version: 20141203014622) do
   add_index "user_authentications", ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id", using: :btree
   add_index "user_authentications", ["user_id"], name: "index_user_authentications_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username",                           null: false
@@ -56,7 +69,9 @@ ActiveRecord::Schema.define(version: 20141203014622) do
     t.datetime "updated_at",                         null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["first_name"], name: "index_users_on_first_name", using: :btree
+  add_index "users", ["last_name"], name: "index_users_on_last_name", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree

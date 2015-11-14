@@ -54,7 +54,7 @@ describe 'User API Endpoint' do
       expect(response.status).to eq 200
     end
     it 'returns only a response header' do
-      expect(response.body).to eq " "
+      expect(response.body).to eq ""
     end
   end
 
