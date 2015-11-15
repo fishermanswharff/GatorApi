@@ -186,22 +186,23 @@ GEM
       redis-store (~> 1.1.0)
     redis-store (1.1.7)
       redis (>= 2.2)
-    rspec-core (3.0.4)
-      rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.4)
+    rspec-core (3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.4)
-      rspec-support (~> 3.0.0)
-    rspec-rails (3.0.2)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.0.0)
-      rspec-expectations (~> 3.0.0)
-      rspec-mocks (~> 3.0.0)
-      rspec-support (~> 3.0.0)
-    rspec-support (3.0.4)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.0)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.0)
     sax-machine (1.3.2)
     simple_oauth (0.3.1)
     simplecov (0.10.0)
@@ -240,10 +241,10 @@ GEM
       rack
       raindrops (~> 0.7)
     uniform_notifier (1.9.0)
-    web-console (2.0.0)
-      activemodel (~> 4.0)
+    web-console (2.2.1)
+      activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
-      railties (~> 4.0)
+      railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
@@ -257,7 +258,7 @@ DEPENDENCIES
   bullet
   codeclimate-test-reporter
   database_cleaner
-  factory_girl_rails (~> 4.0)
+  factory_girl_rails
   faker
   feedjira
   newrelic_rpm
@@ -272,8 +273,8 @@ DEPENDENCIES
   rails_12factor
   redis-rack-cache
   redis-rails
-  rspec-rails (~> 3.0.0)
+  rspec-rails
   spring
   twitter
   unicorn
-  web-console (~> 2.0.0.beta4)
+  web-console

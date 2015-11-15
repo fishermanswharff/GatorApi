@@ -12,7 +12,7 @@ gem 'twitter'
 # gem 'linkedin'
 # gem 'instagram'
 gem 'bcrypt'
-gem 'arel' #, '6.0.0.beta2'
+gem 'arel'
 gem 'redis-rails'
 gem 'redis-rack-cache'
 gem 'newrelic_rpm'
@@ -29,11 +29,11 @@ group :test do
 end
 
 group :development, :test do
-  gem 'web-console', '~> 2.0.0.beta4'
+  gem 'web-console'
   gem 'spring'
   gem 'bullet'
-  gem 'rspec-rails', '~> 3.0.0'
-  gem "factory_girl_rails", "~> 4.0"
+  gem 'rspec-rails'
+  gem "factory_girl_rails"
   gem "faker"
   gem "codeclimate-test-reporter", require: nil
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012232232) do
+ActiveRecord::Schema.define(version: 20151115043346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,17 +25,19 @@ ActiveRecord::Schema.define(version: 20151012232232) do
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
 
   create_table "feeds", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.string   "url",         null: false
-    t.text     "description", null: false
-    t.integer  "user_id"
+    t.string   "title"
+    t.string   "url",          null: false
+    t.text     "description"
+    t.string   "image_url"
+    t.string   "feed_type"
+    t.string   "feed_version"
+    t.string   "encoding"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "feeds", ["title"], name: "index_feeds_on_title", using: :btree
   add_index "feeds", ["url"], name: "index_feeds_on_url", using: :btree
-  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id", using: :btree
 
   create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
@@ -50,6 +52,16 @@ ActiveRecord::Schema.define(version: 20151012232232) do
 
   add_index "user_authentications", ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id", using: :btree
   add_index "user_authentications", ["user_id"], name: "index_user_authentications_on_user_id", using: :btree
+
+  create_table "userfeeds", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "userfeeds", ["feed_id"], name: "index_userfeeds_on_feed_id", using: :btree
+  add_index "userfeeds", ["user_id"], name: "index_userfeeds_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -76,4 +88,6 @@ ActiveRecord::Schema.define(version: 20151012232232) do
   add_index "users", ["token"], name: "index_users_on_token", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "userfeeds", "feeds", on_delete: :cascade
+  add_foreign_key "userfeeds", "users", on_delete: :cascade
 end
