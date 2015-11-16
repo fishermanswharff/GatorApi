@@ -3,7 +3,7 @@ default: &default
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
+  <<: *<%= ENV['DB'] || "mysql" %>
 
 development:
   <<: *default
