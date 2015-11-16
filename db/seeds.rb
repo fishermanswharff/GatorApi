@@ -39,8 +39,6 @@ UserAuthentication.create(user_id: 1, authentication_provider_id: 1, uid: '20350
       "urls"=>{"Website"=>"http://t.co/8oulbeIXyc", "Twitter"=>"https://twitter.com/jasonwharff"}},
     "credentials"=>{"token"=>"20350433-eOEz083pFqaMYyKsNsZQR57cwtVTkfOlx4cLtQbw6", "secret"=>"HTeYHJENqAxMq6BV1lcMBNkcwlvKP9PjJB8VjtJ1p66ur"}})
 
-
-
 {
   "id":2,
   "first_name":"Jenna",

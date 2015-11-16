@@ -3,8 +3,6 @@ language: ruby
 rvm:
 - 2.2.0
 env:
-  matrix:
-  - DB=mysql
   global:
   - WEB_APP_URL: 'http://localhost:9000/#/social'
   - secure: FT+jBK9RINVbBr9IZs71AV8hterXE6ANSvoU5sDvxwXdfaGOaaYnbVR4hdV4oLE2kQG+byqpLwsKshIg8CygQcSaAUVn8Gp7qeMtCCP9d8uGnRqSJMHcndyoBWPhz/bfLsDEmZSaE6HXLekxU35eQJRUQGp6Ztoji/g/8itLTyo=
