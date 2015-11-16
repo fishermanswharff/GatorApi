@@ -13,6 +13,8 @@ env:
   - secure: Wv/vYqD1QrZ3iy36wuP7NPF1arzGfvbQfZQXE7TSxCkps3AMTJDH31W0JZVo8xDsbWxuoID2rjhCwfU03z12lfpo73BJODZdowg7jrGSzD8ZrjBLDMGDiteKZrwp7mmgWDkx3cHPRanAsgFDTVb7u2oUj/CKxEVvHNSo87tYd4Y=
   - secure: CD7XLDrOX5LK7UDdzjxoNXPoYOXi99ZZ637t4ubfAdGRNeiP7wtbCaxdhOl0pXSRsXozp7YVFTyVkcRDY9CenWGtsN7lWSVraNCNOrip39jo4dLJPJk+TpupzyDaSx9plhGLIlcYY1N6Czh+dl5gsOgOAWiXEUAUnSHUKNwK+r8=
   - secure: boulW5lHc1HqlF6mLXTfilNEBFb693UFUst8HpD3bwfH5pJWDexrcef3p7NgU90oJnUwbjH5sAk3fJ2OamLezRJcbA0jFEnZo1fwwtfcAJtzDu5hzQO5tsbBVJksLY1hjM/VNjvz0FxnptcA2OYAt0ESNbPp0QcyiyG3R5Sgdtw=
+services:
+  - mysql
 script:
 - CODECLIMATE_REPO_TOKEN=16d109f017a77e12e9af52396b903a991307530a27c1922ded94cfc0757a137a
   bundle exec rake
@@ -20,7 +22,7 @@ script:
 - bundle exec rspec spec
 before_script:
 - cp config/database.yml.travis config/database.yml
-- psql -c 'create database travis_ci_test' -U postgres
+- mysql -e 'CREATE DATABASE travis_ci_test;'
 deploy:
   provider: heroku
   app: gatorapi

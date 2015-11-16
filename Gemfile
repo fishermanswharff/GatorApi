@@ -27,16 +27,16 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development, :test do
   gem 'web-console'
   gem 'spring'
   gem 'bullet'
-  gem 'rspec-rails'
-  gem "factory_girl_rails"
-  gem "faker"
-  gem "codeclimate-test-reporter", require: nil
 end
 
 group :production do
