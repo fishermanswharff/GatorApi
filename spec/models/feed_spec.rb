@@ -1,16 +1,3 @@
-# == Schema Information
-#
-# Table name: feeds
-#
-#  id          :integer          not null, primary key
-#  title       :string
-#  url         :string           not null
-#  description :text
-#  image_url   :string
-#  created_at  :datetime
-#  updated_at  :datetime
-#
-
 require 'rails_helper'
 
 RSpec.describe Feed, type: :model do
@@ -47,8 +34,8 @@ RSpec.describe Feed, type: :model do
     expect(feed.encoding).not_to be_nil
   end
 
-  it 'has users through users_feeds' do
-    expect{ feed.users << user }.to change{feed.users.count}.from(0).to(1)
+  it 'has users through userfeeds' do
+    expect{ feed.users << user }.to change{Userfeed.count}.from(0).to(1)
   end
 
   it 'will not save the record if the url cannot be parsed as rss' do

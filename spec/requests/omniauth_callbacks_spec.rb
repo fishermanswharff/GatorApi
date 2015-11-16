@@ -5,14 +5,10 @@ require 'uri'
 
 describe 'Omniauth Callbacks Controller' do
 
-  let(:provider) do
-    'twitter'
-  end
+  let(:provider) { 'twitter' }
+
   context 'User has not authorized Gator to the provider' do
     before(:each) do
-      User.destroy_all
-      AuthenticationProvider.destroy_all
-      UserAuthentication.destroy_all
       @user = User.create(
         {
           first_name: 'foo',

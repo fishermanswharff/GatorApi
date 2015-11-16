@@ -1,24 +1,14 @@
-# == Schema Information
-#
-# Table name: feeds
-#
-#  id          :integer          not null, primary key
-#  title       :string
-#  url         :string           not null
-#  description :text
-#  image_url   :string
-#  created_at  :datetime
-#  updated_at  :datetime
-#
-
 require 'rss'
 require 'open-uri'
 
 class Feed < ActiveRecord::Base
-  before_save :add_title_value, :add_description_value, :add_image_url_value, :add_feed_type, :add_feed_version, :add_encoding, if: :valid_feed?
 
   validate :valid_feed?
   validates :url, format: { with: /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#\/\/\=]*)/, message: 'Must be a valid url.' }
+
+  before_save :add_title_value, :add_description_value, :add_image_url_value,
+    :add_feed_type, :add_feed_version, :add_encoding
+
   has_many :userfeeds
   has_many :users, through: :userfeeds
 

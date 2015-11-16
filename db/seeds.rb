@@ -1,33 +1,26 @@
-ActiveRecord::Base.establish_connection
-ActiveRecord::Base.connection.tables.each do |table|
-  next if table == 'schema_migrations'
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE")
-end
+jason = User.find_or_create_by(username: 'jasonwharff')
+jason.update_attributes(
+  first_name: 'Jason',
+  last_name: 'Wharff',
+  role: 'admin',
+  email: 'fishermanswharff@mac.com',
+  password_digest: '$2a$10$iUY.xKqExZ7DhaWVAAh5Q.o/gfUDR5I7iHTp2Y46nmrogYIV504X6',
+  token: '7a2ab5a8677b446eb1c269c5056a001d'
+)
 
-users = User.create!([
-  {
-    first_name: 'Jason',
-    last_name: 'Wharff',
-    username: 'jasonwharff',
-    role: 'admin',
-    email: 'fishermanswharff@mac.com',
-    password_digest: '$2a$10$iUY.xKqExZ7DhaWVAAh5Q.o/gfUDR5I7iHTp2Y46nmrogYIV504X6',
-    token: '7a2ab5a8677b446eb1c269c5056a001d'
-  },
-  {
-    first_name: 'Jenna',
-    last_name: 'Wharff',
-    username: 'ndpndntjn',
-    role: 'generic',
-    email: 'jennawharff@me.com',
-    password_digest: '$2a$10$oFqbXJQo1Vbwhb4vLLQmbu827Yqooz5QHdW1sy8lwfVk9ksxCLJXO',
-    token: 'b4b06767b652419fa4d22fecd74770bc'
-  }
-])
+jenna = User.find_or_create_by(username: 'ndpndntjn')
+jenna.update_attributes(
+  first_name: 'Jenna',
+  last_name: 'Wharff',
+  role: 'generic',
+  email: 'jennawharff@me.com',
+  password_digest: '$2a$10$oFqbXJQo1Vbwhb4vLLQmbu827Yqooz5QHdW1sy8lwfVk9ksxCLJXO',
+  token: 'b4b06767b652419fa4d22fecd74770bc'
+)
 
-AuthenticationProvider.create(name: 'twitter')
-AuthenticationProvider.create(name: 'instagram')
-AuthenticationProvider.create(name: 'linkedin')
+AuthenticationProvider.create!(name: 'twitter')
+AuthenticationProvider.create!(name: 'instagram')
+AuthenticationProvider.create!(name: 'linkedin')
 
 =begin
 
