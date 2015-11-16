@@ -20,7 +20,7 @@ script:
 - bundle exec rspec spec
 before_script:
 - cp config/database.yml.travis config/database.yml
-- mysql -e 'CREATE DATABASE travis_ci_test;'
+# - mysql -e 'CREATE DATABASE travis_ci_test;'
 deploy:
   provider: heroku
   app: gatorapi
