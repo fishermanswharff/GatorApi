@@ -22,18 +22,11 @@ ActiveRecord::Schema.define(version: 20151115043346) do
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
 
   create_table "feeds", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.string   "url",          limit: 255,   null: false
-    t.text     "description",  limit: 65535
-    t.string   "image_url",    limit: 255
-    t.string   "feed_type",    limit: 255
-    t.string   "feed_version", limit: 255
-    t.string   "encoding",     limit: 255
+    t.string   "url",        limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "feeds", ["title"], name: "index_feeds_on_title", using: :btree
   add_index "feeds", ["url"], name: "index_feeds_on_url", using: :btree
 
   create_table "user_authentications", force: :cascade do |t|
