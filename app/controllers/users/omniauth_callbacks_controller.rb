@@ -25,7 +25,6 @@ class Users::OmniauthCallbacksController < ApplicationController
   end
 
   def twitter_callback
-    binding.pry
     fullpath = request.fullpath
     @request = OAuth::AccessToken.new('twitter',{ params: strip_token(fullpath) + '&' + strip_verifier(fullpath) })
     response = @request.request_data(OAuth.get_header_string('access_token',@request.params),OAuth.get_base_url('access_token'), OAuth.get_method,@request.data)
