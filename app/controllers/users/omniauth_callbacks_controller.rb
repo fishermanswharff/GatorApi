@@ -20,15 +20,15 @@ class Users::OmniauthCallbacksController < ApplicationController
     Rails.logger.debug "—————————————— Header string: #{OAuth.get_header_string('request_token',@request.params)} ——————————————"
     Rails.logger.debug "—————————————— twitter response: #{response.body} ——————————————"
     Rails.logger.debug "—————————————— header: #{response.to_hash} ——————————————"
-    token_param = strip_token(response.body)
-    token_secret_param = strip_token_secret(response.body)
-    render json: { token: token_param, secret: token_secret_param }, status: 202
+    # token_param = strip_token(response.body)
+    # token_secret_param = strip_token_secret(response.body)
+    render json: { twitter_params: response.body }, status: 202
   end
 
   def twitter_callback
     fullpath = request.fullpath
-    @request = OAuth::AccessToken.new('twitter',{ params: strip_token(fullpath) + '&' + strip_verifier(fullpath) })
-    response = @request.request_data(OAuth.get_header_string('access_token',@request.params),OAuth.get_base_url('access_token'), OAuth.get_method,@request.data)
+    @access_token_auth = OAuth::AccessToken.new('twitter', { oauth_token: strip_token(fullpath), oauth_verifier: strip_verifier(fullpath) })
+    response = @access_token_auth.request_data(OAuth.get_header_string('access_token',@access_token_auth.params),OAuth.get_base_url('access_token'), OAuth.get_method,@access_token_auth.data)
     Rails.logger.debug "—————————————— twitter callback response: #{response.to_hash} ——————————————"
     @user = User.find_by(token: params['user-token'])
     obj = convertToHash(response.body)
@@ -50,15 +50,15 @@ class Users::OmniauthCallbacksController < ApplicationController
   end
 
   def strip_token(string)
-    string.split('&').detect { |param| param.include? 'oauth_token' }
+    string.split('&').detect { |param| param.include? 'oauth_token' }.split('=').second
   end
 
   def strip_token_secret(string)
-    string.split('&').detect { |param| param.include? 'oauth_token_secret' }
+    string.split('&').detect { |param| param.include? 'oauth_token_secret' }.split('=').second
   end
 
   def strip_verifier(string)
-    string.split('&').detect { |param| param.include? 'oauth_verifier' }
+    string.split('&').detect { |param| param.include? 'oauth_verifier' }.split('=').second
   end
 
   def strip_user_token(string)

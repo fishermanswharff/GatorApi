@@ -11,7 +11,7 @@ module OAuth
       @params = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
-        oauth_nonce: "#{OAuth::get_nonce}",
+        oauth_nonce: "#{OAuth.get_nonce}",
         oauth_signature_method: "HMAC-SHA1",
         oauth_timestamp: "#{@timestamp}",
         oauth_version: "1.0"
@@ -24,7 +24,9 @@ module OAuth
       http.use_ssl = true # ignore if not using HTTPS
       if method == 'POST'
         # post_data here should be your encoded POST string, NOT an array
-        resp, data = http.post(base_uri, post_data, { 'Accept'=> '*/*', 'Authorization' => header })
+        resp, data = http.post(base_uri, post_data, { 'Accept'=> '*/*', 'Host' => 'api.twitter.com', 'Authorization' => header })
+        Rails.logger.debug "—————————————————————— Response/Data from http.post #{resp} ——————————————————————"
+        Rails.logger.debug "—————————————————————— Response/Data from http.post #{data} ——————————————————————"
       else
         resp, data = http.get(url.to_s, { 'Authorization' => header })
       end
@@ -36,6 +38,7 @@ module OAuth
     attr_accessor :data, :params
 
     def initialize(provider,data)
+      # { oauth_token: hAvbxwAAAAAAjwPbAAABUjP9tUY, oauth_verifier: d6tkHUIhsr5BmO6MiOHoyxFXxdrEGKRI }
       @provider = provider
       @consumer_key = ENV['TWITTER_CONSUMER_KEY']
       @consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
@@ -43,7 +46,8 @@ module OAuth
       @data = data
       @params = {
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
-        oauth_nonce: "#{OAuth::get_nonce}",
+        oauth_token: "#{@data[:oauth_token]}",
+        oauth_nonce: "#{OAuth.get_nonce}",
         oauth_signature_method: "HMAC-SHA1",
         oauth_timestamp: "#{@timestamp}",
         oauth_version: "1.0"
@@ -56,7 +60,9 @@ module OAuth
       http.use_ssl = true # ignore if not using HTTPS
       if method == 'POST'
         # post_data here should be your encoded POST string, NOT an array
-        resp, data = http.post(base_uri, post_data[:params], { 'Accept' => '*/*','Content-Type'=> 'text/html; charset=utf-8', 'Content-Length'=> post_data[:params].length.to_s, 'Accept-Language' => 'en-US,en;q=0.8', 'Authorization' => header })
+        resp, data = http.post(base_uri, post_data.to_query, { 'Accept' => '*/*','Content-Type'=> 'application/x-www-form-urlencoded', 'Content-Length'=> post_data.to_query.length.to_s, 'Accept-Language' => 'en-US,en;q=0.8', 'Authorization' => header })
+        Rails.logger.debug "—————————————————————— Response/Data from http.post #{resp} ——————————————————————"
+        Rails.logger.debug "—————————————————————— Response/Data from http.post #{data} ——————————————————————"
       else
         resp, data = http.get(url.to_s, { 'Authorization' => header })
       end
@@ -101,6 +107,10 @@ module OAuth
     hash
   end
 
+  def parameterize(hash)
+
+  end
+
   def self.get_header_string(param_url, param_hash)
     hash = OAuth.add_signature_to_params(param_hash, OAuth.calculate_signature(param_url,param_hash))
     header = "OAuth "
@@ -109,5 +119,6 @@ module OAuth
     end
     header.slice(0..-3)
   end
+
 end
 
