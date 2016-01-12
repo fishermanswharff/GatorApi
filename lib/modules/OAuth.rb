@@ -7,7 +7,7 @@ module OAuth
     def initialize(provider,user_token)
       @provider = provider
       @timestamp = Time.now.utc.to_i.to_s
-      @callback = 'http://localhost:3000/users/auth/twitter/callback?user-token=' + "#{user_token}&provider=#{@provider}"
+      @callback = "http://localhost:3333#{ENV['TWITTER_CALLBACK_URL']}?user-token=#{user_token}&provider=#{@provider}"
       @params = {
         oauth_callback: "#{@callback}",
         oauth_consumer_key: "#{ENV['TWITTER_CONSUMER_KEY']}",
@@ -24,7 +24,7 @@ module OAuth
       http.use_ssl = true # ignore if not using HTTPS
       if method == 'POST'
         # post_data here should be your encoded POST string, NOT an array
-        resp, data = http.post(base_uri, post_data, { 'Content-Type'=> '', 'Authorization' => header })
+        resp, data = http.post(base_uri, post_data, { 'Accept'=> '*/*', 'Authorization' => header })
       else
         resp, data = http.get(url.to_s, { 'Authorization' => header })
       end
@@ -56,7 +56,7 @@ module OAuth
       http.use_ssl = true # ignore if not using HTTPS
       if method == 'POST'
         # post_data here should be your encoded POST string, NOT an array
-        resp, data = http.post(base_uri, post_data[:params], { 'Content-Type'=> '', 'Authorization' => header })
+        resp, data = http.post(base_uri, post_data[:params], { 'Accept' => '*/*','Content-Type'=> 'text/html; charset=utf-8', 'Content-Length'=> post_data[:params].length.to_s, 'Accept-Language' => 'en-US,en;q=0.8', 'Authorization' => header })
       else
         resp, data = http.get(url.to_s, { 'Authorization' => header })
       end
@@ -65,7 +65,7 @@ module OAuth
   end
 
   def self.get_base_url(param)
-    "https://api.twitter.com/oauth/#{param}"
+    "#{ENV['TWITTER_API_OAUTH_URL']}/#{param}"
   end
 
   def self.url_encode(value)
@@ -81,11 +81,11 @@ module OAuth
   end
 
   def self.collect_parameters(hash)
-    hash.sort.collect{ |k, v| "#{OAuth::url_encode(k.to_s)}=#{OAuth::url_encode(v)}" }.join('&')
+    hash.sort.collect{ |k, v| "#{OAuth.url_encode(k.to_s)}=#{OAuth.url_encode(v)}" }.join('&')
   end
 
   def self.get_signature_base_string(param_url, param_hash)
-    OAuth::get_method + "&" + OAuth::url_encode(OAuth::get_base_url(param_url)) + "&" + OAuth::url_encode(OAuth::collect_parameters(param_hash))
+    OAuth.get_method + "&" + OAuth.url_encode(OAuth.get_base_url(param_url)) + "&" + OAuth.url_encode(OAuth.collect_parameters(param_hash))
   end
 
   def self.get_signing_key
@@ -93,7 +93,7 @@ module OAuth
   end
 
   def self.calculate_signature(param_url, param_hash)
-    Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), OAuth::get_signing_key, OAuth::get_signature_base_string(param_url,param_hash))).gsub(/\n| |\r/,'')
+    Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), OAuth.get_signing_key, OAuth.get_signature_base_string(param_url,param_hash))).gsub(/\n|\s|\r/,'')
   end
 
   def self.add_signature_to_params(hash,value)
@@ -102,10 +102,10 @@ module OAuth
   end
 
   def self.get_header_string(param_url, param_hash)
-    hash = OAuth::add_signature_to_params(param_hash,OAuth::calculate_signature(param_url,param_hash))
+    hash = OAuth.add_signature_to_params(param_hash, OAuth.calculate_signature(param_url,param_hash))
     header = "OAuth "
     hash.sort.each do |k,v|
-      header << "#{k}=\"#{OAuth::url_encode(v)}\", "
+      header << "#{k}=\"#{OAuth.url_encode(v)}\", "
     end
     header.slice(0..-3)
   end

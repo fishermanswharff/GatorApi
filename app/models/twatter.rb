@@ -4,8 +4,8 @@ class Twatter
 
   def initialize(user)
     auth = get_auth(user)
-    token = auth.params["oauth_token"]
-    secret = auth.params["oauth_token_secret"]
+    token = auth.params['oauth_token']
+    secret = auth.params['oauth_token_secret']
     screen_name = auth.params["screen_name"]
     @client = get_client(token,secret)
   end
@@ -28,5 +28,4 @@ class Twatter
       config.access_token_secret = secret
     end
   end
-
 end

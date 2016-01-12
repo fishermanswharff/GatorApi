@@ -19,7 +19,6 @@ describe 'Omniauth Callbacks Controller' do
           password: 'secret'
         }
       )
-      post '/login',{ username: "foo", password: "secret" }
     end
     describe '#passthru and #request_token' do
       it 'filters the provider and token, sends request for token' do
@@ -39,6 +38,10 @@ describe 'Omniauth Callbacks Controller' do
         # expect(response.status).to be 302
         # expect(response.body).to eq "<html><body>You are being <a href=\"http://localhost:9000/#/social?provider=twitter&amp;screenname=jasonwharff&amp;user-id=20350433\">redirected</a>.</body></html>"
       end
+
+      it 'creates a UserAuthentication if given a successful response'
+      it 'redirects without creating UserAuthentication if response is an error'
+
     end
   end
 
