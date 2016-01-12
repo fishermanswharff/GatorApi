@@ -19,6 +19,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     response = @request.request_data(OAuth.get_header_string('request_token',@request.params),OAuth.get_base_url('request_token'),OAuth.get_method)
     Rails.logger.debug "—————————————— Header string: #{OAuth.get_header_string('request_token',@request.params)} ——————————————"
     Rails.logger.debug "—————————————— twitter response: #{response.body} ——————————————"
+    Rails.logger.debug "—————————————— header: #{response.to_hash} ——————————————"
     token_param = strip_token(response.body)
     token_secret_param = strip_token_secret(response.body)
     render json: { token: token_param, secret: token_secret_param }, status: 202
@@ -28,6 +29,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     fullpath = request.fullpath
     @request = OAuth::AccessToken.new('twitter',{ params: strip_token(fullpath) + '&' + strip_verifier(fullpath) })
     response = @request.request_data(OAuth.get_header_string('access_token',@request.params),OAuth.get_base_url('access_token'), OAuth.get_method,@request.data)
+    Rails.logger.debug "—————————————— twitter callback response: #{response.to_hash} ——————————————"
     @user = User.find_by(token: params['user-token'])
     obj = convertToHash(response.body)
     if response.code.to_i < 300
