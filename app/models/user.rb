@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
   end
 
   def generate_timestamp
-    DateTime.now
+    DateTime.now.utc
   end
 
 end
