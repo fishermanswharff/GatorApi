@@ -24,35 +24,44 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  before(:each) do
-    User.delete_all
-    @user = User.create({
-      first_name: 'foo',
-      last_name: 'bar',
-      username: 'foobar',
-      role: 'admin',
-      email: 'foo@bar.com',
-      password: 'secret',
-    })
-  end
+  let(:user) { FactoryGirl.create(:user) }
+  let(:admin) { FactoryGirl.create(:user, :admin) }
 
   it 'has a valid email address' do
-    expect(@user.email).to eq 'foo@bar.com'
+    expect(user.email).to match /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/
   end
 
-  it 'has a role of admin' do
-    expect(@user.role).to eq 'admin'
+  it 'user has a generic role' do
+    expect(user.role).to eq 'generic'
+  end
+
+  it 'admin has an admin role' do
+    expect(admin.role).to eq 'admin'
   end
 
   it 'has a unique username' do
-    expect(@user.username).to eq 'foobar'
+    expect(user.username).not_to be_nil
   end
 
   it 'digests the password' do
-    expect(@user.password_digest).to_not be_nil
+    expect(user.password_digest).not_to be_nil
   end
 
   it 'has a token generated from a password digest' do
-    expect(@user.token).to_not be_nil
+    expect(user.token).not_to be_nil
+    expect(user.token.length).to eq 32
+  end
+
+  it 'updates the sign_in_count when a user signs in' do
+    expect{ user.increment_sign_in_count }.to change{ user.sign_in_count }.from(0).to(1)
+  end
+
+  it 'generates a uuid when a user needs to reset a password' do
+    expect{ user.reset_password }.to change{ user.reset_password_token }
+    expect(user.reset_password_token.length).to eq 32
+  end
+
+  it 'updates the timestamp when a user resets their password' do
+    expect{ user.update_reset_password_ts }.to change{ user.reset_password_sent_at }
   end
 end

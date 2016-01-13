@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'search', on: :collection
     end
   end
+
   post '/login', to: 'users#login'
   get '/logout', to: 'users#logout'
   get '/' => redirect('https://github.com/fishermanswharff/GatorApi')

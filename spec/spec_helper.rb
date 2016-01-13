@@ -22,10 +22,6 @@ CodeClimate::TestReporter.start
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  def json(body)
-    JSON.parse(body, symbolize_names: true)
-  end
-
   config.color = true
   config.formatter = :documentation  # :progress, :html, :textmate
 

@@ -107,10 +107,6 @@ module OAuth
     hash
   end
 
-  def parameterize(hash)
-
-  end
-
   def self.get_header_string(param_url, param_hash)
     hash = OAuth.add_signature_to_params(param_hash, OAuth.calculate_signature(param_url,param_hash))
     header = "OAuth "
