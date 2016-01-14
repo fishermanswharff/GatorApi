@@ -9,7 +9,11 @@ class Feed < ActiveRecord::Base
   has_many :userfeeds
   has_many :users, through: :userfeeds
 
-  protected
+  def data
+    Feedjira::Feed.fetch_and_parse url
+  end
+
+  private
 
   def valid_feed?
     begin
@@ -19,6 +23,7 @@ class Feed < ActiveRecord::Base
     end
   end
 
+  # only for validating
   def feed
     RSS::Parser.parse(url)
   end

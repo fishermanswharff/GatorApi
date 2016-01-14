@@ -3,14 +3,14 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  first_name             :string
-#  last_name              :string
-#  username               :string           not null
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  username               :string(255)      not null
 #  role                   :integer          default(1), not null
-#  email                  :string           not null
-#  password_digest        :string
-#  token                  :string
-#  reset_password_token   :string
+#  email                  :string(255)      not null
+#  password_digest        :string(255)
+#  token                  :string(255)
+#  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  sign_in_count          :integer          default(0), not null
@@ -21,6 +21,6 @@
 #
 
 class UserSerializer < ActiveModel::Serializer
-  attributes :email, :id, :first_name, :last_name, :role, :token, :username,
-             :sign_in_count, :current_sign_in_at, :last_sign_in_at, :created_at, :updated_at
+  attributes :created_at, :current_sign_in_at, :email, :first_name, :id, :last_name,
+             :last_sign_in_at, :role, :sign_in_count, :token, :updated_at, :username
 end

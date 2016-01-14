@@ -5,10 +5,10 @@
 #  id                         :integer          not null, primary key
 #  user_id                    :integer
 #  authentication_provider_id :integer
-#  uid                        :string
-#  token                      :string
+#  uid                        :string(255)
+#  token                      :string(255)
 #  token_expires_at           :datetime
-#  params                     :text
+#  params                     :text(65535)
 #  created_at                 :datetime         not null
 #  updated_at                 :datetime         not null
 #
