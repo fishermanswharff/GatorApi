@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :email,
             format: {
               with: /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/,
-              message: 'That’s not a real email address, dummy.'
+              message: 'Sorry, something is wrong with your email address. Let’s try another one, eh?'
             }
 
   enum role: [:admin,:generic]
