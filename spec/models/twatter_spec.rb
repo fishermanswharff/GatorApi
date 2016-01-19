@@ -2,16 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Twatter, type: :model do
 
-  before(:all) do
-    User.destroy_all
-    AuthenticationProvider.destroy_all
-    UserAuthentication.destroy_all
-
-    @jenna = User.create({ first_name: 'jenna', last_name: 'wharff', username: 'jennawharff', role: 'generic', email: 'jennawharff@me.com', password: 'secret' })
-    @jason = User.create({ first_name: 'jason', last_name: 'wharff', username: 'jasonwharff', role: 'admin', email: 'fishermanswharff@mac.com', password: 'secret' })
+  before(:each) do
+    @jenna = User.create({ first_name: 'jenna', last_name: 'wharff', username: 'jennawharff', role: 'generic', email: 'jennawharff@me.com', password: 'secret', password_confirmation: 'secret' })
+    @jason = User.create({ first_name: 'jason', last_name: 'wharff', username: 'jasonwharff', role: 'admin', email: 'fishermanswharff@mac.com', password: 'secret', password_confirmation: 'secret' })
     AuthenticationProvider.create(name: 'twitter')
-    @jenna_auth = UserAuthentication.create_from_omniauth({"oauth_token"=> ENV['TWITTER_JENNA_TOKEN'], "oauth_token_secret"=> ENV['TWITTER_JENNA_SECRET'], "user_id"=>"979312783", "screen_name"=>"ndpndntjn"}, @jenna, 'twitter')
-    @jason_auth = UserAuthentication.create_from_omniauth({"oauth_token"=> ENV['TWITTER_ACCESS_TOKEN'], "oauth_token_secret"=> ENV['TWITTER_ACCESS_SECRET'], "user_id"=>"20350433", "screen_name"=>"jasonwharff"}, @jason, 'twitter')
+    @jenna_auth = UserAuthentication.create_from_omniauth({"oauth_token"=> ENV['TWITTER_JENNA_TOKEN'], "oauth_token_secret"=> ENV['TWITTER_JENNA_SECRET'], "user_id"=>"#{@jenna.id}", "screen_name"=>"ndpndntjn"}, @jenna, 'twitter')
+    @jason_auth = UserAuthentication.create_from_omniauth({"oauth_token"=> ENV['TWITTER_ACCESS_TOKEN'], "oauth_token_secret"=> ENV['TWITTER_ACCESS_SECRET'], "user_id"=>"#{@jason.id}", "screen_name"=>"jasonwharff"}, @jason, 'twitter')
   end
 
   let(:jenna_twitter) { Twatter.new(@jenna) }

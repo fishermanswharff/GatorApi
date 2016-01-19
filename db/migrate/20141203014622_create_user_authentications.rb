@@ -1,13 +1,12 @@
 class CreateUserAuthentications < ActiveRecord::Migration
   def change
     create_table :user_authentications, force: true do |t|
-      t.integer :user_id
-      t.integer :authentication_provider_id
+      t.integer :user_id, null: false
+      t.integer :authentication_provider_id, null: false
       t.string :uid
       t.string :token
       t.datetime :token_expires_at
-      t.text :params
-
+      t.text :params, null: false
       t.timestamps null:false
     end
     add_index :user_authentications, [:authentication_provider_id], name: :index_user_authentications_on_authentication_provider_id

@@ -22,8 +22,8 @@ class UserAuthentication < ActiveRecord::Base
   def self.create_from_omniauth(params, user, provider)
     auth_provider = AuthenticationProvider.find_by(name: provider)
     create(
-      user: user,
-      authentication_provider: auth_provider,
+      user_id: user.id,
+      authentication_provider_id: auth_provider.id,
       uid: params['user_id'],
       token: params['oauth_token'],
       token_expires_at: 1.month.from_now.to_datetime,
